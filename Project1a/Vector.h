@@ -1,83 +1,151 @@
-// Vector.h -- header file for Vector data structure project
+// vector.h -- header file for vector data structure project
 
 #pragma once
-#ifndef _Vector_h
-#define _Vector_h
+#ifndef _vector_h
+#define _vector_h
+
+#include <memory>
+#include <cstdint>
 
 namespace epl{
 
 template <typename T>
-class Vector {
-	using Same = Vector<T>;
+class vector {
 private:
+	T* data;
+	uint64_t length = 0;
+	uint64_t capacity = 8;
 
+	void amor_double(void) {
+		T *tmp = data;
+		capacity *= 2;
+		data = (T*)operator new(sizeof(T) * capacity);
+		for (uint64_t k = 0; k < length; k++) {
+			new (data + k)T(std::move(tmp[k]));
+			tmp[k].~T();
+		}
+		operator delete(tmp);
+	}
 public:
-	Vector<T>(void) {
-		// TODO: implement constructor
+	vector(void)
+	{
+		data = (T*)operator new(sizeof(T) * capacity); 
 	}
 
-	Vector<T>(uint64_t n) {
-		// TODO: implement explicit constructor
+	explicit vector(uint64_t n) : length(0), capacity(n)
+	{
+		if (n == 0) capacity = 8;
+		data = (T*)operator new(sizeof(T) * capacity); 
+		for (uint64_t k = 0; k < length; k++) {
+			new (data + k)T();
+		}
 	}
 
-	~Vector<T>(void) {
-		// TODO: implement destructor
+	~vector(void)
+	{
+		for (uint64_t k = 0; k < length; k++) {
+			data[k].~T();
+		}
+		operator delete(data);
 	}
 
-	Vector<T>(const Same& that) {
-		// TODO: implement copy constructor
+	vector(const vector<T>& that)
+	{
+		capacity = that.capacity;
+		length = that.length;
+		data = (T*)operator new(sizeof(T) * capacity);
+		for (uint64_t k = 0; k < length; k++) {
+			new (data + k)T(that.data[k]);
+		}
 	}
 
-	Vector<T>(const Same&& that) {
-		// TODO: implement move constructor
+	vector(const vector<T>&& that)
+	{
+		capacity = that.capacity;
+		length = that.length;
+		data = that.data;
 	}
 
-	Vector<T> operator=(const Same& that) {
-		// TODO: implement copy operator=
+	vector<T>& operator=(const vector<T>& that)
+	{
+		std::swap(data, that.data);
+		return *this;
 	}
 
-	Vector<T> operator=(const Same&& that) {
-		// TODO: implement move operator=
+	vector<T>& operator=(const vector<T>&& that)
+	{
+		capacity = that.capacity;
+		length = that.length;
+		data = that.data;
+		that.length = 0;
+		that.data = 0;
+
+		return *this;
 	}
 
-	T& operator[](uint64_t k) {
-		// TODO: implement operator[]
+	T& operator[](uint64_t k)
+	{
+		if (k < length) {
+			return data[k];
+		}
+		throw std::out_of_range{"index out of range"};
 	}
 
 	const T& operator[](uint64_t k) const {
-		// TODO: implement const operator[]
+		if (k < length) {
+			return data[k];
+		}
+		throw std::out_of_range{"index out of range"};
 	}
 
 	uint64_t size(void) const {
-		// TODO: implement size
+		return length;
 	}
 
-	void push_back(const T&) {
-		// TODO: implement push_back with copy
+	void push_back(const T& e)
+	{
+		if (length == capacity) {
+			amor_double();
+		}
+		new (data + length) T(e);
+		length++;
 	}
 
-	void push_back(const T&&) {
-		// TODO: implement push_back with move
+	void push_back(const T&& e)
+	{
+		if (length == capacity) {
+			amor_double();
+		}
+		new (data + length) T(std::move(e));
+		length++;
 	}
 
-	void push_front(const T&) {
-		// TODO: implement push_front with copy
+	void pop_back(void)
+	{
+		if (length == 0) {
+			throw std::out_of_range{"index out of range"};
+		}
+		length--;
+		data[length].~T();
 	}
 
-	void push_front(const T&&) {
-		// TODO: implement push_front with move
+
+	void push_front(const T& e)
+	{
+		push_back(e);
 	}
 
-	void pop_back(void) {
-		// TODO: implement pop_back
+	void push_front(const T&& e)
+	{
+		push_back(e);
 	}
 
-	void pop_front(void) {
-		// TODO: implement pop_front
+	void pop_front(void)
+	{
+		pop_back();
 	}
-
 };
 
 } //namespace epl
 
-#endif /* _Vector_h */
+#endif /* _vector_h */
