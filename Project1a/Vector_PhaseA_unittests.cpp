@@ -22,12 +22,12 @@
 using std::cout;
 using std::endl;
 
-using epl::Vector;
+using epl::vector;
 
 // TEST SUITE A
 TEST(PhaseA, push_back)
 {
-    Vector<int> x;
+    vector<int> x;
     EXPECT_EQ(0, x.size());
 
     x.push_back(42);
@@ -35,9 +35,10 @@ TEST(PhaseA, push_back)
     EXPECT_EQ(42, x[0]);
 }
 
+
 TEST(PhaseA, bracket_operator)
 {
-    Vector<int> x;
+    vector<int> x;
     EXPECT_EQ(0, x.size());
 
     x.push_back(42);
@@ -50,7 +51,7 @@ TEST(PhaseA, bracket_operator)
 
 TEST(PhaseA, pop_back)
 {
-    Vector<int> x;
+    vector<int> x;
     EXPECT_EQ(0, x.size());
 
     x.push_back(42);
@@ -60,26 +61,28 @@ TEST(PhaseA, pop_back)
     EXPECT_EQ(0, x.size());
 }
 
+
 TEST(PhaseA, constructors)
 {
-    Vector<int> x;
+    vector<int> x;
     EXPECT_EQ(0, x.size());
 
     x.push_back(42);
-    Vector<int> y{ x };
+    vector<int> y{ x };
     EXPECT_EQ(1, y.size());
     EXPECT_EQ(42, y[0]);
 
     y[0] = 10;
     EXPECT_NE(10, x[0]);
 
-    Vector<int> z(10); // must use () to avoid ambiguity over initializer list
+    vector<int> z(10); // must use () to avoid ambiguity over initializer list
     EXPECT_EQ(10, z.size());
 }
 
+
 TEST(PhaseA, range_checks)
 {
-    Vector<int> x(10);
+    vector<int> x(10);
     EXPECT_NO_THROW(
     for (int k = 0; k < 10; k += 1) {
         x[k] = k;
@@ -94,7 +97,7 @@ TEST(PhaseA, range_checks)
 #define ARRAY_SIZE(X) (sizeof(X)/sizeof(*X))
 TEST(PhaseA1, PushBackFront)
 {
-    Vector<int> x;
+    vector<int> x;
     EXPECT_EQ(0, x.size());
 
     x.push_back(42);
@@ -104,6 +107,7 @@ TEST(PhaseA1, PushBackFront)
         x.push_back(k);
         x.push_front(k);
     }
+
     int ans[] = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 42, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     EXPECT_EQ(ARRAY_SIZE(ans), x.size());
     for (uint64_t i = 0; i < ARRAY_SIZE(ans); i += 1)
@@ -112,11 +116,12 @@ TEST(PhaseA1, PushBackFront)
     }
 }
 
+
 TEST(PhaseA1, CopyConstruct)
 {
-    Vector<int> x;
+    vector<int> x;
     x.push_back(42);
-    Vector<int> y(x); // copy constructed
+    vector<int> y(x); // copy constructed
     x.push_back(0);
 
     EXPECT_EQ(1, y.size());
@@ -161,12 +166,9 @@ TEST(PhaseA2, FooCtorDtor)
 {
     Foo::reset();
     {
-        std::cout << "starting test:\n";
-        Vector<Foo> x(10); // 10 default-constructed Foo objects
+        vector<Foo> x(10); // 10 default-constructed Foo objects
         for (int k = 0; k < 11; ++k) {
-            std::cout << "call to Push_Front\n";
             x.push_front(Foo()); // default-construct temp, then move it
-            std::cout << "Destructions: " << Foo::destructions << "\n";
         }
     } //ensures x is destroyed
 
@@ -175,12 +177,13 @@ TEST(PhaseA2, FooCtorDtor)
     EXPECT_EQ(11, Foo::copies);
 }
 
+
 /* I'm offering no guidance here, other than this is a case you should explore */
 TEST(PhaseA2, ReallocCopy)
 {
     Foo::reset();
     {
-        Vector<Vector<Foo>> x(3);
+        vector<vector<Foo>> x(3);
         x[0].push_front(Foo()); //1 alive Foo
         x.push_front(x[0]); //1 copy, 2 alive Foo
     } //ensures x is destroyed
@@ -199,6 +202,8 @@ int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
     auto out = RUN_ALL_TESTS();
-    while (true);
-    std::cout << out << std::endl;
+#ifdef _MSC_VER
+    system("pause");
+#endif
+    return out;
 }
