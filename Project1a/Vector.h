@@ -33,14 +33,45 @@ private:
 		}
 		operator delete(hold);
 	}
+
+	void destroy(void)
+	{
+		for (uint64_t k = 0; k < hsize; k++) {
+			head[k].~T();
+		}
+		for (uint64_t k = 0; k < tsize; k++) {
+			tail[-k].~T();
+		}
+		operator delete(head);
+	}
+
 	void copy(const vector<T>& that)
 	{
-		capacity = that.capacity;
-		hsize = that.hsize;
-		tsize = that.tsize;
-		head = that.head;
-		tail = that.tail;
+		if (this != &that) {
+			destroy();
+			capacity = that.capacity;
+			hsize = that.hsize;
+			tsize = that.tsize;
+			head = (T*)operator new(sizeof(T) * capacity);
+			tail = head + capacity - 1;
+			for (uint64_t k = 0; k < hsize; k++) {
+				new (head + k)T(that.head[k]);
+			}
+			for (uint64_t k = 0; k < tsize; k++) {
+				new (tail - k)T(that.tail[-k]);
+			}
+		}
 	}
+
+	void move(vector<T>&& that)
+	{
+		std::swap(capacity, that.capacity);
+		std::swap(head, that.head);
+		std::swap(tail, that.tail);
+		std::swap(hsize, that.hsize);
+		std::swap(tsize, that.tsize);
+	}
+
 	T& lookup(uint64_t k)
 	{
 		if (k < tsize) return tail[k - tsize + 1];
@@ -58,7 +89,7 @@ public:
 	{
 		if (n == 0) capacity = 8;
 		head = (T*)operator new(sizeof(T) * capacity);
-		tail = head + capacity;
+		tail = head + capacity - 1;
 		for (uint64_t k = 0; k < hsize; k++) {
 			new (head + k)T();
 		}
@@ -66,52 +97,28 @@ public:
 
 	~vector(void)
 	{
-		for (uint64_t k = 0; k < hsize; k++) {
-			head[k].~T();
-		}
-		for (uint64_t k = 0; k < tsize; k++) {
-			tail[-k].~T();
-		}
-		operator delete(head);
+		destroy();
 	}
 
 	vector(const vector<T>& that)
 	{
-		capacity = that.capacity;
-		hsize = that.hsize;
-		tsize = that.tsize;
-		head = (T*)operator new(sizeof(T) * capacity);
-		tail = head + capacity;
-		for (uint64_t k = 0; k < hsize; k++) {
-			new (head + k)T(that.head[k]);
-		}
-		for (uint64_t k = 0; k < tsize; k++) {
-			new (tail - k)T(that.tail[-k]);
-		}
+		copy(that);
 	}
 
-	vector(const vector<T>&& that)
+	vector(vector<T>&& that)
 	{
-		copy(that);
+		*this = std::move(that);
 	}
 
 	vector<T>& operator=(vector<T>& that)
 	{
-		T* tmp = head;
 		copy(that);
-		that.head = tmp;
 		return *this;
 	}
 
 	vector<T>& operator=(vector<T>&& that)
 	{
-		if (this != &that) {
-			this->~vector();
-			copy(that);
-			that.head = nullptr;
-			that.hsize = 0;
-			that.tsize = 0;
-		}
+		move(std::move(that));
 		return *this;
 	}
 
