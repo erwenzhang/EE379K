@@ -66,11 +66,16 @@ private:
 
 	void move(vector<T>&& that)
 	{
-		std::swap(capacity, that.capacity);
-		std::swap(head, that.head);
-		std::swap(tail, that.tail);
-		std::swap(hsize, that.hsize);
-		std::swap(tsize, that.tsize);
+		capacity = that.capacity;
+		head = that.head;
+		tail = that.tail;
+		hsize = that.hsize;
+		tsize = that.tsize;
+		that.head = nullptr;
+		that.tail = nullptr;
+		that.capacity = 0;
+		that.hsize = 0;
+		that.tsize = 0;
 	}
 
 	T& lookup(uint64_t k)
@@ -113,13 +118,19 @@ public:
 
 	vector<T>& operator=(vector<T>& that)
 	{
-		copy(that);
+		if (this != &that) {
+			destroy();
+			copy(that);
+		}
 		return *this;
 	}
 
 	vector<T>& operator=(vector<T>&& that)
 	{
-		move(std::move(that));
+		if (this != &that) {
+			destroy();
+			move(std::move(that));
+		}
 		return *this;
 	}
 
