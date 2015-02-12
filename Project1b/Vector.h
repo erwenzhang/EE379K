@@ -18,13 +18,14 @@ private:
 	uint64_t tsize = 0;
 	uint64_t capacity = 8;
 
-	void amor_double(void)
+	void amor_double(const std::function <void (void)>& insert_element)
 	{
 		T* hold = head;
 		T* told = tail;
 		capacity *= 2;
 		head = (T*)operator new(sizeof(T) * capacity);
 		tail = head + capacity - 1;
+		insert_element();
 		for (uint64_t k = 0; k < hsize; k++) {
 			new (head + k)T(std::move(hold[k]));
 		}
@@ -139,37 +140,45 @@ public:
 
 	void push_back(const T& e)
 	{
+		auto insert_element = [&](void) { new (head + hsize) T(e); };
 		if (hsize + tsize == capacity) {
-			amor_double();
+			amor_double(insert_element);
+		} else {
+			insert_element();
 		}
-		new (head + hsize) T(e);
 		hsize++;
 	}
 
-	void push_back(const T&& e)
+	void push_back(T&& e)
 	{
+		auto insert_element = [&](void) { new (head + hsize) T(std::move(e)); };
 		if (hsize + tsize == capacity) {
-			amor_double();
+			amor_double(insert_element);
+		} else {
+			insert_element();
 		}
-		new (head + hsize) T(std::move(e));
 		hsize++;
 	}
 
 	void push_front(const T& e)
 	{
+		auto insert_element = [&](void) { new (tail - tsize) T(e); };
 		if (hsize + tsize == capacity) {
-			amor_double();
+			amor_double(insert_element);
+		} else {
+			insert_element();
 		}
-		new (tail - tsize) T(e);
 		tsize++;
 	}
 
-	void push_front(const T&& e)
+	void push_front(T&& e)
 	{
+		auto insert_element = [&](void) { new (tail - tsize) T(std::move(e)); };
 		if (hsize + tsize == capacity) {
-			amor_double();
+			amor_double(insert_element);
+		} else {
+			insert_element();
 		}
-		new (tail - tsize) T(std::move(e));
 		tsize++;
 	}
 
