@@ -108,3 +108,90 @@ uint64_t distance(I b, I e) {
 }
 ```
 
+This solution does not work for base classes. For instance, an `int*` is a
+valid iterator, but `I::iterator_category` makes no sense on a base type.
+
+The standard library provides an `iterator_traits` class to determine the
+type of an iterator. The reason for a class instead of a function is the
+inability to `return a type` in C++. Using a class allows us to use a feature of
+C++ called _template specialization_.
+
+### `iterator_traits`
+
+```
+/* by itself, this is useless... we're going to specialize though */
+/* this is an example of how the std library is implemented */
+template <typename T>
+struct iterator_traits {
+    using value_type = T::value_type;
+    using iterator_category = T::iterator_category;
+}
+
+/* the following specialization matches pointers */
+template <template T>
+struct iterator_traits<T*> {
+    using value_type = T;
+    using iterator_category = std::random_access_iterator_tag;
+}
+
+/* we can modify our distance function from above to use this concept */
+template <typename I>
+uint64_t distance(I b, I e) {
+    /* template metaprogramming - oh boy! */
+    iterator_traits<I>::iterator_category x{};
+    return distance(b, e, x);
+}
+```
+
+### A simple annoyance
+
+When the compiler first checks our distance function template, the compiler must
+choose how to interpret `iterator_traits<I>::iterator_category`. It might be a
+nested type, it might be a static variable, it might even be a function. The
+default assumption is that `::iterator_category` is a static variable. So the
+first time the compiler checks our function, it sees a syntax error.
+
+As a result... `typename`!
+```
+template <typename I>
+uint64_t distance(I b, I e) {
+    /* let the compiler know what's happening */
+    typename std::iterator_traits<I>::iterator_category x{};
+    return distance(b, e, x);
+}
+```
+And another!
+```
+template <typename T>
+struct iterator_traits {
+    using value_type = T::value_type;
+    using iterator_category = typename T::iterator_category;
+}
+```
+
+### `value_type`
+
+If we have a function that operates on iterators, we may want to dereference our
+iterator at some point.
+```
+template <typename I>
+I partition(I b, I e) {
+    auto piv = *b;
+    /* etc. */
+}
+```
+Using the typename `auto` is the easiest way to do this, but it's still useful
+to understand the alternative (if you're using something older than C++11).
+```
+template <typename I>
+I partition(I b, I e) {
+    using T = typename std::iterator_traits<I>::value_type;
+    T piv = *b;
+    /* etc. */
+}
+```
+
+Template metaprogramming allows you to operate with and make queries about
+types.
+
+
