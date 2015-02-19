@@ -64,3 +64,28 @@ public:
     }
 };
 ```
+
+### Summary
+
+Generally, we want to solve the following problem.
+```
+template <typename t>
+void doit(T p) {
+    if (T is powerful)
+        method 1
+    else
+        method 2
+}
+```
+__The above solution does not work.__
+
+Instead, we use function overloading (for the compiler's benefit).
+```
+template <typename T>
+void doit(T p) {
+    T::dependent_type x{};
+    method(x); // where overloading decides
+}
+```
+This becomes an `if` at compile time.
+
