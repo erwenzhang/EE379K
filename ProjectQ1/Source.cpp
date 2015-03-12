@@ -150,7 +150,8 @@ void partD(void) {
 
 int main(void) {
 	partA();
-	// partB();
-	// partC();
+	partB();
+	partC();
+	partD();
 }
 

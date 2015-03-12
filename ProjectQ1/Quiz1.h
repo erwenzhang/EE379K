@@ -106,6 +106,35 @@ print<char const*> Print(char const* v) { return print<char const*>{v}; }
 
 /* End functionality for Print */
 
+template <typename... Types>
+struct program;
+
+template <typename T>
+struct program<T> {
+	T _val;
+	program(T val) : _val(val) {}
+	void operator()(void) {
+		_val();
+	}
+};
+
+template <typename T, typename... Args>
+struct program<T, Args...> {
+	program<Args...> _prog;
+	T _val;
+	program(T val, Args... args) : _prog(args...), _val(val) {}
+	void operator()(void) {
+		_val();
+		_prog();
+	}
+};
+
+template <typename T>
+program<T> Program(T t) { return program<T>(t); }
+
+template <typename T, typename... Args>
+program<T, Args...> Program(T t, Args... args) { return program<T, Args...>(t, args...); }
+
 } // end namespace epl_quiz1
 
 #endif /* QUIZ1_H_ */
