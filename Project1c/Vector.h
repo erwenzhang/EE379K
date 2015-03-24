@@ -117,7 +117,7 @@ private:
 	}
 
 	template <typename I>
-	void construct(I b, I e, std::forward_iterator_tag t, T v) {
+	void construct(I b, I e, std::input_iterator_tag t, T v) {
 	    head = (T*)operator new(sizeof(T) * capacity);
 		tail = head + capacity - 1;
 		for (auto it = b; it != e; ++it) {
