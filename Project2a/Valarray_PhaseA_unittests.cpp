@@ -32,6 +32,18 @@ bool match(X x, Y y) {
 /*********************************************************************/
 
 #if defined(PHASE_A0_1) | defined(PHASE_A)
+TEST(PhaseA, BasicTest) {
+    valarray<int> x(10);
+    valarray<int> y(10);
+    x = 1;
+    y = 2;
+
+    auto z = x + y;
+    EXPECT_EQ(z[0], 3);
+}
+#endif
+
+#if defined(PHASE_A0_1) | defined(PHASE_A)
 TEST(PhaseA, BracketOp) {
     valarray<complex<double>> x(10);
     for (int i = 0; i < 10; ++i)
@@ -39,6 +51,10 @@ TEST(PhaseA, BracketOp) {
 
     //passes
     auto y = x + x;
+
+    auto _foo = x + 1;
+    auto _bar = 1 + x;
+
     for (int i = 0; i<10; ++i) {
         complex<double> ans(i, i);
         ans += ans;
