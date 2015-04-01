@@ -1,529 +1,133 @@
 ====== Summary ======
-make: *** [PHASE_A0_0.tst] Error 1
-make: *** [PHASE_A1_0.tst] Error 1
 make: *** [PHASE_A0_1.tst] Error 1
-make: *** [PHASE_AS0_2.tst] Error 1
-make: *** [PHASE_AS0_0.tst] Error 1
+make: *** [PHASE_A1_0.tst] Error 1
 make: *** [PHASE_AS0_1.tst] Error 1
+make: *** [PHASE_AS0_2.tst] Error 1
 make: *** [PHASE_AS0_3.tst] Error 1
 make: *** [PHASE_AS0_4.tst] Error 1
-make: *** [PHASE_AS0_5.tst] Error 1
-make: *** [PHASE_AS1_0.tst] Error 1
+[       OK ] PhaseA.Operators (0 ms)
+[  FAILED  ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseA1Secret.<censored>
 
 ======= Dump========
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_A0_1 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_A0_1.tst
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_A0_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_A0_0.tst
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_A1_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_A1_0.tst
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-Valarray_PhaseA_unittests.cpp: In member function ‘virtual void PhaseA_Operators_Test::TestBody()’:
-Valarray_PhaseA_unittests.cpp:62:20: error: variable ‘epl::valarray<int> x’ has initializer but incomplete type
-     valarray<int> x(10);
-                    ^
-Valarray_PhaseA_unittests.cpp:63:20: error: variable ‘epl::valarray<int> y’ has initializer but incomplete type
-     valarray<int> y(20);
-                    ^
-Valarray_PhaseA_unittests.cpp: In member function ‘virtual void PhaseA1_Complex_Test::TestBody()’:
-Valarray_PhaseA_unittests.cpp:74:31: error: variable ‘epl::valarray<std::complex<float> > x’ has initializer but incomplete type
-     valarray<complex<float>> x(10);
-                               ^
-Valarray_PhaseA_unittests.cpp:75:22: error: variable ‘epl::valarray<double> y’ has initializer but incomplete type
-     valarray<double> y = { 1.5, 2.5, 3.5 };
-                      ^
-Valarray_PhaseA_unittests.cpp:80:31: error: variable ‘epl::valarray<std::complex<double> > z’ has initializer but incomplete type
-     valarray<complex<double>> z = y + x;
-                               ^
-Valarray_PhaseA_unittests.cpp:81:31: error: variable ‘epl::valarray<std::complex<double> > r’ has initializer but incomplete type
-     valarray<complex<double>> r = y + y + z;
-                               ^
-In file included from ../../gtest/include/gtest/gtest.h:1929:0,
-                 from Valarray_PhaseA_unittests.cpp:14:
-../../gtest/include/gtest/gtest.h:1979:64: error: template argument 1 is invalid
-                       EqHelper<GTEST_IS_NULL_LITERAL_(expected)>::Compare, \
-                                                                ^
-../../gtest/include/gtest/gtest_pred_impl.h:77:52: note: in definition of macro ‘GTEST_ASSERT_’
-   if (const ::testing::AssertionResult gtest_ar = (expression)) \
-                                                    ^
-../../gtest/include/gtest/gtest_pred_impl.h:162:3: note: in expansion of macro ‘GTEST_PRED_FORMAT2_’
-   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
-   ^
-../../gtest/include/gtest/gtest.h:1978:3: note: in expansion of macro ‘EXPECT_PRED_FORMAT2’
-   EXPECT_PRED_FORMAT2(::testing::internal:: \
-   ^
-Valarray_PhaseA_unittests.cpp:82:5: note: in expansion of macro ‘EXPECT_EQ’
-     EXPECT_EQ(r[0], complex<double>(4.5, 0));
-     ^
-../../gtest/include/gtest/gtest.h:1979:64: error: template argument 1 is invalid
-                       EqHelper<GTEST_IS_NULL_LITERAL_(expected)>::Compare, \
-                                                                ^
-../../gtest/include/gtest/gtest_pred_impl.h:77:52: note: in definition of macro ‘GTEST_ASSERT_’
-   if (const ::testing::AssertionResult gtest_ar = (expression)) \
-                                                    ^
-../../gtest/include/gtest/gtest_pred_impl.h:162:3: note: in expansion of macro ‘GTEST_PRED_FORMAT2_’
-   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
-   ^
-../../gtest/include/gtest/gtest.h:1978:3: note: in expansion of macro ‘EXPECT_PRED_FORMAT2’
-   EXPECT_PRED_FORMAT2(::testing::internal:: \
-   ^
-Valarray_PhaseA_unittests.cpp:83:5: note: in expansion of macro ‘EXPECT_EQ’
-     EXPECT_EQ(r[1], complex<double>(7.5, 0));
-     ^
-../../gtest/include/gtest/gtest.h:1979:64: error: template argument 1 is invalid
-                       EqHelper<GTEST_IS_NULL_LITERAL_(expected)>::Compare, \
-                                                                ^
-../../gtest/include/gtest/gtest_pred_impl.h:77:52: note: in definition of macro ‘GTEST_ASSERT_’
-   if (const ::testing::AssertionResult gtest_ar = (expression)) \
-                                                    ^
-../../gtest/include/gtest/gtest_pred_impl.h:162:3: note: in expansion of macro ‘GTEST_PRED_FORMAT2_’
-   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
-   ^
-../../gtest/include/gtest/gtest.h:1978:3: note: in expansion of macro ‘EXPECT_PRED_FORMAT2’
-   EXPECT_PRED_FORMAT2(::testing::internal:: \
-   ^
-Valarray_PhaseA_unittests.cpp:84:5: note: in expansion of macro ‘EXPECT_EQ’
-     EXPECT_EQ(r[2], complex<double>(10.5, 0));
-     ^
 Valarray_PhaseA_unittests.cpp: In member function ‘virtual void PhaseA_BracketOp_Test::TestBody()’:
-Valarray_PhaseA_unittests.cpp:36:32: error: variable ‘epl::valarray<std::complex<double> > x’ has initializer but incomplete type
-     valarray<complex<double>> x(10);
-                                ^
-Valarray_PhaseA_unittests.cpp:41:31: error: variable ‘epl::valarray<std::complex<double> > y’ has initializer but incomplete type
+Valarray_PhaseA_unittests.cpp:41:37: error: conversion from ‘epl::BinOp<epl::addition, epl::valarray<std::complex<double> >, epl::valarray<std::complex<double> > > {aka epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<std::complex<double> >, epl::valarray<std::complex<double> > >, epl::valarray<std::complex<double> >, epl::valarray<std::complex<double> > > >}’ to non-scalar type ‘epl::valarray<std::complex<double> >’ requested
      valarray<complex<double>> y = x + x;
-                               ^
-Valarray_PhaseA_unittests.cpp:51:20: error: unable to deduce ‘auto&&’ from ‘x’
-     for (auto yi : x) {
-                    ^
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-Makefile:27: recipe for target 'PHASE_A0_0.tst' failed
-make: *** [PHASE_A0_0.tst] Error 1
+                                     ^
+Valarray_PhaseA_unittests.cpp: In member function ‘virtual void PhaseA1_Complex_Test::TestBody()’:
+Valarray_PhaseA_unittests.cpp:80:37: error: conversion from ‘epl::BinOp<epl::addition, epl::valarray<double>, epl::valarray<std::complex<float> > > {aka epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<double>, epl::valarray<std::complex<float> > >, epl::valarray<double>, epl::valarray<std::complex<float> > > >}’ to non-scalar type ‘epl::valarray<std::complex<double> >’ requested
+     valarray<complex<double>> z = y + x;
+                                     ^
+Valarray_PhaseA_unittests.cpp:81:41: error: conversion from ‘epl::BinOp<epl::addition, epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<double>, epl::valarray<double> >, epl::valarray<double>, epl::valarray<double> > >, epl::valarray<std::complex<double> > > {aka epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<double>, epl::valarray<double> >, epl::valarray<double>, epl::valarray<double> > >, epl::valarray<std::complex<double> > >, epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<double>, epl::valarray<double> >, epl::valarray<double>, epl::valarray<double> > >, epl::valarray<std::complex<double> > > >}’ to non-scalar type ‘epl::valarray<std::complex<double> >’ requested
+     valarray<complex<double>> r = y + y + z;
+                                         ^
+Makefile:27: recipe for target 'PHASE_A0_1.tst' failed
+make: *** [PHASE_A0_1.tst] Error 1
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_0.tst
 Makefile:27: recipe for target 'PHASE_A1_0.tst' failed
 make: *** [PHASE_A1_0.tst] Error 1
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_1 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_1.tst
-Makefile:27: recipe for target 'PHASE_A0_1.tst' failed
-make: *** [PHASE_A0_1.tst] Error 1
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_2 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_2.tst
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
 Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseASecret.<censored>
-Valarray_secret_unittests.cpp:59:20: error: variable ‘epl::valarray<int> x’ has initializer but incomplete type
-     valarray<int> x(0);
-                    ^
-Valarray_secret_unittests.cpp:60:20: error: variable ‘epl::valarray<int> y’ has initializer but incomplete type
-     valarray<int> y(0);
-                    ^
-Valarray_secret_unittests.cpp:69:19: error: variable ‘epl::valarray<int> z’ has initializer but incomplete type
+Valarray_secret_unittests.cpp:52:18: error: cannot bind ‘std::ostream {aka std::basic_ostream<char>}’ lvalue to ‘std::basic_ostream<char>&&’
+     std::cout << x << std::endl;
+                  ^
+In file included from /usr/include/c++/4.9/istream:39:0,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/ostream:602:5: note: initializing argument 1 of ‘std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = epl::valarray<int>]’
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^
+Valarray_secret_unittests.cpp:53:22: error: cannot bind ‘std::ostream {aka std::basic_ostream<char>}’ lvalue to ‘std::basic_ostream<char>&&’
+     std::cout << x + 1 << std::endl;
+                      ^
+In file included from /usr/include/c++/4.9/istream:39:0,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/ostream:602:5: note: initializing argument 1 of ‘std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >]’
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^
+Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseASecret.<censored>
+Valarray_secret_unittests.cpp:69:25: error: conversion from ‘epl::BinOp<epl::addition, epl::valarray<int>, epl::valarray<int> > {aka epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >}’ to non-scalar type ‘epl::valarray<int>’ requested
      valarray<int> z = x + y;
-                   ^
-Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseASecret.<censored>
-Valarray_secret_unittests.cpp:28:20: error: variable ‘epl::valarray<int> x’ has initializer but incomplete type
-     valarray<int> x(10);
-                    ^
-Valarray_secret_unittests.cpp:29:20: error: variable ‘epl::valarray<int> y’ has initializer but incomplete type
-     valarray<int> y(20);
-                    ^
-Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseASecret.<censored>
-Valarray_secret_unittests.cpp:51:20: error: variable ‘epl::valarray<int> x’ has initializer but incomplete type
-     valarray<int> x(10);
-                    ^
-Makefile:27: recipe for target 'PHASE_AS0_2.tst' failed
-make: *** [PHASE_AS0_2.tst] Error 1
-g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_3 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_3.tst
-Makefile:27: recipe for target 'PHASE_AS0_0.tst' failed
-make: *** [PHASE_AS0_0.tst] Error 1
-g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_4 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_4.tst
+                         ^
 Makefile:27: recipe for target 'PHASE_AS0_1.tst' failed
 make: *** [PHASE_AS0_1.tst] Error 1
+g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_3 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_3.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_4 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_4.tst
+Makefile:27: recipe for target 'PHASE_AS0_2.tst' failed
+make: *** [PHASE_AS0_2.tst] Error 1
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_5 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_5.tst
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
 Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseASecret.<censored>
-Valarray_secret_unittests.cpp:85:20: error: variable ‘epl::valarray<int> x’ has initializer but incomplete type
-     valarray<int> x(0);
-                    ^
-Valarray_secret_unittests.cpp:91:19: error: variable ‘epl::valarray<int> y’ has initializer but incomplete type
+Valarray_secret_unittests.cpp:91:25: error: conversion from ‘epl::BinOp<epl::addition, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > {aka epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >}’ to non-scalar type ‘epl::valarray<int>’ requested
      valarray<int> y = x + 1;
-                   ^
+                         ^
 Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseASecret.<censored>
-Valarray_secret_unittests.cpp:107:20: error: variable ‘epl::valarray<int> x’ has initializer but incomplete type
-     valarray<int> x(0);
-                    ^
-Valarray_secret_unittests.cpp:113:19: error: variable ‘epl::valarray<int> y’ has initializer but incomplete type
+Valarray_secret_unittests.cpp:113:25: error: conversion from ‘epl::BinOp<epl::addition, epl::vexpr<epl::UnaryVal<int> >, epl::valarray<int> > {aka epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryVal<int> >, epl::valarray<int> >, epl::vexpr<epl::UnaryVal<int> >, epl::valarray<int> > >}’ to non-scalar type ‘epl::valarray<int>’ requested
      valarray<int> y = 1 + x;
-                   ^
-Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseASecret.<censored>
-Valarray_secret_unittests.cpp:129:19: error: aggregate ‘epl::valarray<int> x’ has incomplete type and cannot be defined
-     valarray<int> x;
-                   ^
+                         ^
 Makefile:27: recipe for target 'PHASE_AS0_3.tst' failed
 make: *** [PHASE_AS0_3.tst] Error 1
 g++ Valarray_PhaseA_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS1_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS1_0.tst
 Makefile:27: recipe for target 'PHASE_AS0_4.tst' failed
 make: *** [PHASE_AS0_4.tst] Error 1
-Makefile:27: recipe for target 'PHASE_AS0_5.tst' failed
-make: *** [PHASE_AS0_5.tst] Error 1
-In file included from Valarray_PhaseA_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-In file included from Valarray_secret_unittests.cpp:13:0:
-Valarray.h:20:7: error: ‘epl’ has not been declared
- using epl::vector; // after submission
-       ^
-Valarray.h:43:15: error: ‘vector’ was not declared in this scope
- struct to_ref<vector<T>> { using type = vector<T>&; };
-               ^
-Valarray.h:43:22: error: template argument 1 is invalid
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                      ^
-Valarray.h:43:23: error: expected unqualified-id before ‘>’ token
- struct to_ref<vector<T>> { using type = vector<T>&; };
-                       ^
-Valarray.h:190:32: error: expected template-name before ‘<’ token
- struct valarray : public vector<T> {
-                                ^
-Valarray.h:190:32: error: expected ‘{’ before ‘<’ token
-Valarray.h:190:32: error: expected unqualified-id before ‘<’ token
-Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseA1Secret.<censored>
-Valarray_secret_unittests.cpp:136:20: error: variable ‘epl::valarray<int> x’ has initializer but incomplete type
-     valarray<int> x(10);
-                    ^
-Valarray_secret_unittests.cpp:138:5: error: incomplete type ‘epl::valarray<int>’ used in nested name specifier
-     valarray<int>::iterator ite = x.begin();
-     ^
-Valarray_secret_unittests.cpp:139:12: error: ‘ite’ was not declared in this scope
-     for (; ite != x.end(); ++ite) {
-            ^
-Makefile:27: recipe for target 'PHASE_AS1_0.tst' failed
-make: *** [PHASE_AS1_0.tst] Error 1
+
+Testing: PHASE_A0_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseA
+[ RUN      ] PhaseA.Operators
+[       OK ] PhaseA.Operators (0 ms)
+[----------] 1 test from PhaseA (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS0_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+unknown file: Failure
+C++ exception with description "vector::_M_range_check: __n (which is 15) >= this->size() (which is 15)" thrown in the test body.
+[  FAILED  ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (16 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] PhaseASecret.<censored>
+
+ 1 FAILED TEST
+
+Testing: PHASE_AS0_5.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS1_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseA1Secret.<censored>
+[ RUN      ] PhaseA1Secret.<censored>
+[       OK ] PhaseA1Secret.<censored>
+[----------] 1 test from PhaseA1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
