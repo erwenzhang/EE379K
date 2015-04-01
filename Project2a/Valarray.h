@@ -15,6 +15,7 @@
 #define _Valarray_h
 
 #include <vector>
+#include <cmath>
 
 using std::vector; // during development and testing
 // using epl::vector; // after submission
@@ -23,6 +24,9 @@ namespace epl {
 
 template <typename T>
 struct valarray;
+
+template <typename T>
+struct vexpr;
 
 /*
  * type alias to detect numeric types
@@ -122,8 +126,16 @@ struct BinaryOp {
 };
 
 template <class T>
+struct unary_f : std::unary_function<ValueType<T>, ValueType<T>> {
+	ValueType<T> operator()(const ValueType<T>) const;
+};
+template <class T>
 struct unary_negate : std::unary_function<ValueType<T>, ValueType<T>> {
 	ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+};
+template <class T>
+struct unary_sqrt : std::unary_function<ValueType<T>, ValueType<T>> {
+	ValueType<T> operator()(const ValueType<T>& x) const { return sqrt(x); }
 };
 template <class T, class U>
 struct addition : std::binary_function<ValueType<T>, ValueType<U>, ValueType<T>> {
@@ -158,14 +170,10 @@ struct division : std::binary_function<ValueType<T>, ValueType<U>, ValueType<T>>
 	}
 };
 
-template<class VExpr>
-struct vexpr {
-	using value_type = typename VExpr::value_type;
-	Ref<VExpr> v;
-	vexpr(VExpr v) : v(v) {}
-	vexpr(valarray<VExpr> v) : v(v) {}
-	value_type operator[](size_t k) const { return v[k]; }
-	size_t size() const { return v.size(); }
+template <class T>
+struct summer {
+	using value_type = typename T::value_type;
+	ValueType<T> operator()(ValueType<T> a, ValueType<T> b) { return a + b; }
 };
 
 template<class VExpr>
@@ -184,6 +192,34 @@ using UnOp = typename std::enable_if<is_vexpr<A>::value, vexpr<UnaryOp<Op<A>, A>
 
 template <typename T>
 using UnVal = vexpr<UnaryVal<T>>;
+
+template <class Op, class A>
+using UnAcc = typename std::enable_if<is_vexpr<A>::value, typename Op::value_type>::type;
+
+template<class VExpr>
+struct vexpr {
+	using value_type = typename VExpr::value_type;
+	Ref<VExpr> v;
+	vexpr(VExpr v) : v(v) {}
+	vexpr(valarray<VExpr> v) : v(v) {}
+	value_type operator[](size_t k) const { return v[k]; }
+	size_t size() const { return v.size(); }
+
+	template <class Op>
+	UnAcc<Op, vexpr<VExpr>> accumulate(Op op) {
+		typename Op::value_type acc(0);
+		for (int k = 0; k < v.size(); k++) {
+			acc = op(acc, v[k]);
+		}
+		return acc;
+	}
+	UnOp<unary_f, vexpr<VExpr>> apply(unary_f<vexpr<VExpr>> f) {
+		using Op = UnaryOp<unary_f<VExpr>, VExpr>;
+		return vexpr<Op>(Op(f, v));
+	}
+	UnOp<unary_sqrt, vexpr<VExpr>> sqrt() { return this->apply(unary_sqrt<VExpr>()); }
+	UnAcc<summer<vexpr<VExpr>>, vexpr<VExpr>> sum() { return this->accumulate(summer<vexpr<VExpr>>()); }
+};
 
 /* Basic declaration of valarray (inherits everything from vector) */
 template <typename T>
@@ -211,6 +247,21 @@ struct valarray : public vector<T> {
 		}
 		return *this;
 	}
+
+	template <class Op>
+	UnAcc<Op, valarray<T>> accumulate(Op op) {
+		typename Op::value_type acc(0);
+		for (int k = 0; k < this->size(); k++) {
+			acc = op(acc, this->at(k));
+		}
+		return acc;
+	}
+	UnOp<unary_f, valarray<T>> apply(unary_f<valarray<T>> f) {
+		using Op = UnaryOp<unary_f<T>, T>;
+		return vexpr<Op>(Op(f, this));
+	}
+	UnOp<unary_sqrt, valarray<T>> sqrt() { return this->apply(unary_sqrt<T>()); }
+	UnAcc<summer<valarray<T>>, valarray<T>> sum() { return this->accumulate(summer<valarray<T>>()); }
 
 	UnOp<unary_negate, valarray<T>> operator-();
 	template <typename U>
