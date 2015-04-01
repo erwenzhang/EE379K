@@ -18,7 +18,7 @@
 #include <cmath>
 
 using std::vector; // during development and testing
-// using epl::vector; // after submission
+//using epl::vector; // after submission
 
 namespace epl {
 
@@ -228,6 +228,16 @@ struct valarray : public vector<T> {
 	valarray() : vector<T>(){}
 	valarray(uint64_t n) : vector<T>(n) {}
 	valarray(std::initializer_list<T> il) : vector<T>(il) {}
+
+	template <typename U, typename = is_easy_vexpr<U>>
+	valarray(U v) {
+		if (this->capacity() == 0) {
+			this->resize(v.size());
+		}
+		for (int k = 0; k < this->capacity(); k++) {
+			this->at(k) = v[k];
+		}
+	}
 
 	virtual valarray& operator=(T x) {
 		this->clear();
