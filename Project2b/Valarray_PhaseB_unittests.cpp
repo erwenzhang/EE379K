@@ -64,8 +64,8 @@ TEST(PhaseB1, Apply) {
 #if defined(PHASE_B1_2) | defined(PHASE_B)
 TEST(PhaseB1, Accumulate) {
     valarray<int> v1{1, 2, 3, 4, 5};
-    sum = v1.accumulate(std::plus<int>());
-    product = v1.accumulate(std::multiplies<int>());
+    int sum = v1.accumulate(std::plus<int>());
+    int product = v1.accumulate(std::multiplies<int>());
     EXPECT_EQ(15, sum);
     EXPECT_EQ(120, product);
 }
