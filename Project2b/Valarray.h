@@ -67,17 +67,7 @@ using SameSame = typename std::conditional<
 			std::is_same<T, const std::complex<float>>::value ||
 			std::is_same<U, const std::complex<float>>::value,
 			const std::complex<float>,
-			typename std::conditional<
-				std::is_same<T, const std::complex<long long>>::value ||
-				std::is_same<U, const std::complex<long long>>::value,
-				const std::complex<long long>,
-				typename std::conditional<
-					std::is_same<T, const std::complex<long>>::value ||
-					std::is_same<U, const std::complex<long>>::value,
-					const std::complex<long>,
-					T
-				>::type
-			>::type
+			T
 		>::type
 	>::type
 >::type;
@@ -241,7 +231,7 @@ struct valarray : public vector<T> {
 
 	template <typename U, typename = is_easy_vexpr<U>>
 	valarray(U v) {
-		for (int k = 0; k < this->len(); k++) {
+		for (int k = 0; (k < this->len()) && (k < v.len()); k++) {
 			this->operator[](k) = v[k];
 		}
 		for (int k = this->len(); k < v.len(); k++) {
@@ -253,7 +243,7 @@ struct valarray : public vector<T> {
 		while (this->len() != 0) {
 			this->pop_back();
 		}
-		for (int k = 0; k < this->capacity(); k++) {
+		for (int k = 0; k < this->len(); k++) {
 			this->push_back(x);
 		}
 		return *this;
