@@ -145,3 +145,15 @@ TEST(PhaseB1, Fun) {
     EXPECT_EQ(c, 7);
 }
 #endif
+
+#if defined(PHASE_B1_4) | defined(PHASE_B)
+TEST(PhaseB1, Printing) {
+    valarray<int> v1(5);
+    valarray<double> v2 = 4 + v1;
+
+    std::cout << v1 << " + 4 = " << v2 << '\n';
+    std::cout << v1 << " + 5 = " << v1 + 5 << '\n';
+
+    EXPECT_EQ(5, (v1 + 10).size());
+}
+#endif

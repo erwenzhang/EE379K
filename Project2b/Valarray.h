@@ -103,6 +103,7 @@ struct UnaryVal {
 	UnaryVal(const T v) : v(v) {}
 	T operator[](size_t k) const { return v; }
 	size_t len() const { return SIZE_MAX; }
+	size_t size() const { return this->len(); }
 };
 
 template <class Op, class Lhs>
@@ -113,6 +114,7 @@ struct UnaryOp {
 	UnaryOp(const Op& op, const Lhs& lhs) : op(op), lhs(const_cast<Lhs&>(lhs)) {}
 	CondComp<Lhs, Lhs> operator[](size_t k) const { return op(lhs[k]); }
 	size_t len() const { return lhs.len(); }
+	size_t size() const { return this->len(); }
 };
 
 template <class Op, class Lhs, class Rhs>
@@ -124,6 +126,7 @@ struct BinaryOp {
 	BinaryOp(const Op& op, const Lhs& lhs, const Rhs& rhs) : op(op), lhs(const_cast<Lhs&>(lhs)), rhs(const_cast<Rhs&>(rhs)) {}
 	auto operator[](size_t k) const -> decltype(op(lhs[k], rhs[k])) { return op(lhs[k], rhs[k]); }
 	size_t len() const { return (lhs.len() < rhs.len()) ? lhs.len() : rhs.len(); }
+	size_t size() const { return this->len(); }
 };
 
 template <template <class> class Op, class T, class Lhs>
@@ -134,6 +137,7 @@ struct UnaryFunction {
 	UnaryFunction(const Op<T>& op, const Lhs& lhs) : op(op), lhs(const_cast<Lhs&>(lhs)) {}
 	value_type operator[](size_t k) const { return op(static_cast<T>(lhs[k])); }
 	size_t len() const { return lhs.len(); }
+	size_t size() const { return this->len(); }
 };
 
 template <class T>
@@ -205,6 +209,7 @@ struct vexpr {
 	vexpr(valarray<VExpr> v) : v(v) {}
 	value_type operator[](size_t k) const { return v[k]; }
 	size_t len() const { return v.len(); }
+	size_t size() const { return this->len(); }
 
 	template <template <class> class Func>
 	auto accumulate(Func<VExpr> f) -> typename decltype(f)::result_type {
@@ -352,6 +357,18 @@ template <typename T, typename U, typename = is_easy_math<U>>
 BinOp<division, T, UnVal<U>> operator/(const T& a, const U& b) { return a / UnVal<U>(UnaryVal<U>(b)); }
 template <typename T, typename U, typename = is_easy_math<U>>
 BinOp<division, UnVal<U>, T> operator/(const U& b, const T& a) { return UnVal<U>(UnaryVal<U>(b)) / a; }
+
+template <typename T, typename = is_easy_vexpr<T>>
+std::ostream& operator<<(std::ostream& stream, const T& x) {
+	char sep = '[';
+	for (int i = 0; i < x.size(); i++) {
+		stream << sep;
+		stream << x[i];
+		sep = ',';
+	}
+	stream << ']';
+	return stream;
+}
 
 }
 
