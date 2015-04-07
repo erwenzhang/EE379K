@@ -132,7 +132,7 @@ struct UnaryFunction {
 	const Ref<Lhs> lhs;
 	using value_type = typename Op<T>::result_type;
 	UnaryFunction(const Op<T>& op, const Lhs& lhs) : op(op), lhs(const_cast<Lhs&>(lhs)) {}
-	value_type operator[](size_t k) const { return op(lhs[k]); }
+	value_type operator[](size_t k) const { return op(static_cast<T>(lhs[k])); }
 	size_t len() const { return lhs.len(); }
 };
 
@@ -265,20 +265,25 @@ struct valarray : public vector<T> {
 		return *this;
 	}
 
-	template <template <class> class Func>
-	auto accumulate(Func<T> f) -> typename decltype(f)::result_type {
-		typename decltype(f)::result_type acc(this->operator[](0));
+	template <template <class> class Func, typename U>
+	auto accumulate(Func<U> f) -> typename decltype(f)::result_type {
+		using V = typename decltype(f)::result_type;
+		if (this->size() == 0) {
+			return V{};
+		}
+		V acc(this->operator[](0));
 		for (int k = 1; k < this->len(); k++) {
-			acc = f(acc, this->operator[](k));
+			acc = f(acc, static_cast<V>(this->operator[](k)));
 		}
 		return acc;
 	}
 
-	template <template <class> class Func>
-	vexpr<UnaryFunction<Func, T, valarray<T>>> apply(Func<T> f) {
-		using Op = UnaryFunction<Func, T, valarray<T>>;
+	template <template <class> class Func, typename U>
+	vexpr<UnaryFunction<Func, U, valarray<T>>> apply(Func<U> f) {
+		using Op = UnaryFunction<Func, U, valarray<T>>;
 		return vexpr<Op>(Op(f, *this));
 	}
+
 	auto sqrt() -> decltype(this->apply(unary_sqrt<T>())) { return this->apply(unary_sqrt<T>()); }
 	UnAcc<std::plus<T>, valarray<T>> sum() { return this->accumulate(std::plus<T>()); }
 
