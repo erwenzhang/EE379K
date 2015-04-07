@@ -14,11 +14,12 @@
 #ifndef _Valarray_h
 #define _Valarray_h
 
-#include <vector>
 #include <cmath>
 
-using std::vector; // during development and testing
-//using epl::vector; // after submission
+// #include <vector>
+// using std::vector; // during development and testing
+#include "Vector.h"
+using epl::vector; // after submission
 
 namespace epl {
 
@@ -101,7 +102,7 @@ struct UnaryVal {
 	T v;
 	UnaryVal(const T v) : v(v) {}
 	T operator[](size_t k) const { return v; }
-	size_t size() const { return SIZE_MAX; }
+	size_t len() const { return SIZE_MAX; }
 };
 
 template <class Op, class Lhs>
@@ -111,7 +112,7 @@ struct UnaryOp {
 	const Ref<Lhs> lhs;
 	UnaryOp(const Op& op, const Lhs& lhs) : op(op), lhs(const_cast<Lhs&>(lhs)) {}
 	CondComp<Lhs, Lhs> operator[](size_t k) const { return op(lhs[k]); }
-	size_t size() const { return lhs.size(); }
+	size_t len() const { return lhs.len(); }
 };
 
 template <class Op, class Lhs, class Rhs>
@@ -122,7 +123,7 @@ struct BinaryOp {
 	using value_type = decltype(op(lhs[0], rhs[0]));
 	BinaryOp(const Op& op, const Lhs& lhs, const Rhs& rhs) : op(op), lhs(const_cast<Lhs&>(lhs)), rhs(const_cast<Rhs&>(rhs)) {}
 	auto operator[](size_t k) const -> decltype(op(lhs[k], rhs[k])) { return op(lhs[k], rhs[k]); }
-	size_t size() const { return std::min(lhs.size(), rhs.size()); }
+	size_t len() const { return (lhs.len() < rhs.len()) ? lhs.len() : rhs.len(); }
 };
 
 template <template <class> class Op, class T, class Lhs>
@@ -132,7 +133,7 @@ struct UnaryFunction {
 	using value_type = typename Op<T>::result_type;
 	UnaryFunction(const Op<T>& op, const Lhs& lhs) : op(op), lhs(const_cast<Lhs&>(lhs)) {}
 	value_type operator[](size_t k) const { return op(lhs[k]); }
-	size_t size() const { return lhs.size(); }
+	size_t len() const { return lhs.len(); }
 };
 
 template <class T>
@@ -203,13 +204,13 @@ struct vexpr {
 	vexpr(VExpr v) : v(v) {}
 	vexpr(valarray<VExpr> v) : v(v) {}
 	value_type operator[](size_t k) const { return v[k]; }
-	size_t size() const { return v.size(); }
+	size_t len() const { return v.len(); }
 
 	template <template <class> class Func>
 	auto accumulate(Func<VExpr> f) -> typename decltype(f)::result_type {
-		typename decltype(f)::result_type acc(this->at(0));
-		for (int k = 1; k < this->size(); k++) {
-			acc = f(acc, this->at(k));
+		typename decltype(f)::result_type acc(this->operator[](0));
+		for (int k = 1; k < this->len(); k++) {
+			acc = f(acc, this->operator[](k));
 		}
 		return acc;
 	}
@@ -227,22 +228,26 @@ struct vexpr {
 template <typename T>
 struct valarray : public vector<T> {
 	using value_type = T;
-	valarray() : vector<T>(){}
-	valarray(uint64_t n) : vector<T>(n) {}
+	valarray() : vector<T>() {}
+	explicit valarray(size_t n) : vector<T>(n) {}
 	valarray(std::initializer_list<T> il) : vector<T>(il) {}
+
+	size_t len() const { return this->size(); }
 
 	template <typename U, typename = is_easy_vexpr<U>>
 	valarray(U v) {
-		if (this->capacity() == 0) {
-			this->resize(v.size());
+		for (int k = 0; k < this->len(); k++) {
+			this->operator[](k) = v[k];
 		}
-		for (int k = 0; k < this->capacity(); k++) {
-			this->at(k) = v[k];
+		for (int k = this->len(); k < v.len(); k++) {
+			this->push_back(v[k]);
 		}
 	}
 
-	virtual valarray& operator=(T x) {
-		this->clear();
+	valarray& operator=(T x) {
+		while (this->len() != 0) {
+			this->pop_back();
+		}
 		for (int k = 0; k < this->capacity(); k++) {
 			this->push_back(x);
 		}
@@ -251,20 +256,20 @@ struct valarray : public vector<T> {
 
 	template <typename U, typename = is_easy_vexpr<U>>
 	valarray& operator=(U v) {
-		if (this->capacity() == 0) {
-			this->resize(v.size());
+		for (int k = 0; k < this->len(); k++) {
+			this->operator[](k) = v[k];
 		}
-		for (int k = 0; k < this->capacity(); k++) {
-			this->at(k) = v[k];
+		for (int k = this->len(); k < v.len(); k++) {
+			this->push_back(v[k]);
 		}
 		return *this;
 	}
 
 	template <template <class> class Func>
 	auto accumulate(Func<T> f) -> typename decltype(f)::result_type {
-		typename decltype(f)::result_type acc(this->at(0));
-		for (int k = 1; k < this->size(); k++) {
-			acc = f(acc, this->at(k));
+		typename decltype(f)::result_type acc(this->operator[](0));
+		for (int k = 1; k < this->len(); k++) {
+			acc = f(acc, this->operator[](k));
 		}
 		return acc;
 	}
