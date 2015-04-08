@@ -1,0 +1,1006 @@
+====== Summary ======
+make: *** [PHASE_BS1_0.tst] Error 1
+make: *** [PHASE_BS1_5.tst] Error 1
+make: *** [PHASE_BS2_0.tst] Error 1
+[       OK ] PhaseA.Operators (0 ms)
+[       OK ] PhaseA.BracketOp (0 ms)
+[       OK ] PhaseA1.Complex (0 ms)
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[       OK ] PhaseB1.Sqrt (0 ms)
+[       OK ] PhaseB1.Apply (0 ms)
+[       OK ] PhaseB1.Accumulate (0 ms)
+[       OK ] PhaseB1.Lazy (0 ms)
+[       OK ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[  FAILED  ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+
+======= Dump========
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_A0_1 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_A0_1.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_A0_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_A0_0.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_A1_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_A1_0.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_B1_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_B1_0.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_B1_1 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_B1_1.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_B1_2 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_B1_2.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_B1_3 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_B1_3.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_0.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_1 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_1.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_2 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_2.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_3 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_3.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_4 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_4.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS0_5 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS0_5.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_AS1_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_AS1_0.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_0.tst
+Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseB1Secret.<censored>
+Valarray_secret_unittests.cpp:160:32: error: no matching function for call to ‘begin(epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >&)’
+     for (auto const& val : x + y) {
+                                ^
+Valarray_secret_unittests.cpp:160:32: note: candidates are:
+In file included from /usr/include/c++/4.9/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.9/string:52,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/initializer_list:89:5: note: template<class _Tp> constexpr const _Tp* std::begin(std::initializer_list<_Tp>)
+     begin(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.9/initializer_list:89:5: note:   template argument deduction/substitution failed:
+Valarray_secret_unittests.cpp:160:32: note:   ‘epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’ is not derived from ‘std::initializer_list<_Tp>’
+     for (auto const& val : x + y) {
+                                ^
+In file included from /usr/include/c++/4.9/string:51:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/range_access.h:87:5: note: template<class _Tp, long unsigned int _Nm> _Tp* std::begin(_Tp (&)[_Nm])
+     begin(_Tp (&__arr)[_Nm])
+     ^
+/usr/include/c++/4.9/bits/range_access.h:87:5: note:   template argument deduction/substitution failed:
+Valarray_secret_unittests.cpp:160:32: note:   mismatched types ‘_Tp [_Nm]’ and ‘epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’
+     for (auto const& val : x + y) {
+                                ^
+In file included from /usr/include/c++/4.9/string:51:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/range_access.h:58:5: note: template<class _Container> decltype (__cont.begin()) std::begin(const _Container&)
+     begin(const _Container& __cont) -> decltype(__cont.begin())
+     ^
+/usr/include/c++/4.9/bits/range_access.h:58:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.9/bits/range_access.h: In substitution of ‘template<class _Container> decltype (__cont.begin()) std::begin(const _Container&) [with _Container = epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >]’:
+Valarray_secret_unittests.cpp:160:32:   required from here
+/usr/include/c++/4.9/bits/range_access.h:58:5: error: ‘const struct epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’ has no member named ‘begin’
+/usr/include/c++/4.9/bits/range_access.h:48:5: note: template<class _Container> decltype (__cont.begin()) std::begin(_Container&)
+     begin(_Container& __cont) -> decltype(__cont.begin())
+     ^
+/usr/include/c++/4.9/bits/range_access.h:48:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.9/bits/range_access.h: In substitution of ‘template<class _Container> decltype (__cont.begin()) std::begin(_Container&) [with _Container = epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >]’:
+Valarray_secret_unittests.cpp:160:32:   required from here
+/usr/include/c++/4.9/bits/range_access.h:48:5: error: ‘struct epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’ has no member named ‘begin’
+Valarray_secret_unittests.cpp:160:32: error: no matching function for call to ‘end(epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >&)’
+     for (auto const& val : x + y) {
+                                ^
+Valarray_secret_unittests.cpp:160:32: note: candidates are:
+In file included from /usr/include/c++/4.9/bits/basic_string.h:42:0,
+                 from /usr/include/c++/4.9/string:52,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/initializer_list:99:5: note: template<class _Tp> constexpr const _Tp* std::end(std::initializer_list<_Tp>)
+     end(initializer_list<_Tp> __ils) noexcept
+     ^
+/usr/include/c++/4.9/initializer_list:99:5: note:   template argument deduction/substitution failed:
+Valarray_secret_unittests.cpp:160:32: note:   ‘epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’ is not derived from ‘std::initializer_list<_Tp>’
+     for (auto const& val : x + y) {
+                                ^
+In file included from /usr/include/c++/4.9/string:51:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/range_access.h:97:5: note: template<class _Tp, long unsigned int _Nm> _Tp* std::end(_Tp (&)[_Nm])
+     end(_Tp (&__arr)[_Nm])
+     ^
+/usr/include/c++/4.9/bits/range_access.h:97:5: note:   template argument deduction/substitution failed:
+Valarray_secret_unittests.cpp:160:32: note:   mismatched types ‘_Tp [_Nm]’ and ‘epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’
+     for (auto const& val : x + y) {
+                                ^
+In file included from /usr/include/c++/4.9/string:51:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/range_access.h:78:5: note: template<class _Container> decltype (__cont.end()) std::end(const _Container&)
+     end(const _Container& __cont) -> decltype(__cont.end())
+     ^
+/usr/include/c++/4.9/bits/range_access.h:78:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.9/bits/range_access.h: In substitution of ‘template<class _Container> decltype (__cont.end()) std::end(const _Container&) [with _Container = epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >]’:
+Valarray_secret_unittests.cpp:160:32:   required from here
+/usr/include/c++/4.9/bits/range_access.h:78:5: error: ‘const struct epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’ has no member named ‘end’
+/usr/include/c++/4.9/bits/range_access.h:68:5: note: template<class _Container> decltype (__cont.end()) std::end(_Container&)
+     end(_Container& __cont) -> decltype(__cont.end())
+     ^
+/usr/include/c++/4.9/bits/range_access.h:68:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.9/bits/range_access.h: In substitution of ‘template<class _Container> decltype (__cont.end()) std::end(_Container&) [with _Container = epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >]’:
+Valarray_secret_unittests.cpp:160:32:   required from here
+/usr/include/c++/4.9/bits/range_access.h:68:5: error: ‘struct epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<double> >, epl::valarray<int>, epl::valarray<double> > >’ has no member named ‘end’
+Makefile:27: recipe for target 'PHASE_BS1_0.tst' failed
+make: *** [PHASE_BS1_0.tst] Error 1
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_1 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_1.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_2 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_2.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_3 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_3.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_4 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_4.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_5 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_5.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_6 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_6.tst
+Valarray_secret_unittests.cpp: In member function ‘virtual void PhaseB1Secret.<censored>
+Valarray_secret_unittests.cpp:288:9: error: cannot convert ‘std::binary_function<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >, epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >, epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >::result_type {aka epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >}’ to ‘int’ in assignment
+     sum = (v1 + v2).sum();
+         ^
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h: In instantiation of ‘typename decltype (f)::result_type epl::vexpr<T>::accumulate(Func<VExpr>) [with Func = std::plus; VExpr = epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >; typename decltype (f)::result_type = epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >]’:
+Valarray.h:219:107:   required from ‘decltype (((epl::vexpr<T>*)this)->.accumulate(std::plus<VExpr>())) epl::vexpr<T>::sum() [with VExpr = epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >; decltype (((epl::vexpr<T>*)this)->.accumulate(std::plus<VExpr>())) = epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >]’
+Valarray_secret_unittests.cpp:288:25:   required from here
+Valarray.h:206:60: error: no matching function for call to ‘epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >::BinaryOp(epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >::value_type)’
+   typename decltype(f)::result_type acc(this->operator[](0));
+                                                            ^
+Valarray.h:206:60: note: candidates are:
+Valarray.h:116:2: note: epl::BinaryOp<Op, Lhs, Rhs>::BinaryOp(const Op&, const Lhs&, const Rhs&) [with Op = epl::addition<epl::valarray<int>, epl::valarray<int> >; Lhs = epl::valarray<int>; Rhs = epl::valarray<int>]
+  BinaryOp(const Op& op, const Lhs& lhs, const Rhs& rhs) : op(op), lhs(const_cast<Lhs&>(lhs)), rhs(const_cast<Rhs&>(rhs)) {}
+  ^
+Valarray.h:116:2: note:   candidate expects 3 arguments, 1 provided
+Valarray.h:111:8: note: constexpr epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >::BinaryOp(const epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >&)
+ struct BinaryOp {
+        ^
+Valarray.h:111:8: note:   no known conversion for argument 1 from ‘epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >::value_type {aka int}’ to ‘const epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >&’
+Valarray.h:111:8: note: constexpr epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >::BinaryOp(epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >&&)
+Valarray.h:111:8: note:   no known conversion for argument 1 from ‘epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >::value_type {aka int}’ to ‘epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >&&’
+Valarray.h:208:36: error: no match for call to ‘(std::plus<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >) (std::binary_function<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >, epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >, epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >::result_type&, epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >::value_type)’
+    acc = f(acc, this->operator[](k));
+                                    ^
+In file included from /usr/include/c++/4.9/string:48:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/stl_function.h:167:12: note: candidate is:
+     struct plus : public binary_function<_Tp, _Tp, _Tp>
+            ^
+/usr/include/c++/4.9/bits/stl_function.h:170:7: note: _Tp std::plus<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >]
+       operator()(const _Tp& __x, const _Tp& __y) const
+       ^
+/usr/include/c++/4.9/bits/stl_function.h:170:7: note:   no known conversion for argument 2 from ‘epl::vexpr<epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> > >::value_type {aka int}’ to ‘const epl::BinaryOp<epl::addition<epl::valarray<int>, epl::valarray<int> >, epl::valarray<int>, epl::valarray<int> >&’
+Makefile:27: recipe for target 'PHASE_BS1_5.tst' failed
+make: *** [PHASE_BS1_5.tst] Error 1
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_7 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_7.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_8 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_8.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS1_9 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS1_9.tst
+g++ Valarray_PhaseA_unittests.cpp Valarray_PhaseB_unittests.cpp Valarray_secret_unittests.cpp -DPHASE_BS2_0 ../../gtest/lib/gtest64.a -I ../../gtest/include -std=c++11 -fpermissive  -pthread -o PHASE_BS2_0.tst
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h: In instantiation of ‘struct epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >’:
+Valarray.h:112:11:   required from ‘struct epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >’
+Valarray.h:196:47:   required from ‘struct epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > >’
+Valarray_secret_unittests.cpp:422:34:   required from here
+Valarray.h:145:87: error: no match for ‘operator+’ (operand types are ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ and ‘epl::ValueType<epl::valarray<int> > {aka int}’)
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+Valarray.h:145:87: note: candidates are:
+Valarray.h:307:31: note: template<class Expr1, class Expr2> epl::BinOp<epl::addition, Expr1, Expr2> epl::operator+(const Expr1&, const Expr2&)
+ BinOp<addition, Expr1, Expr2> operator+(const Expr1& x, const Expr2& y) {
+                               ^
+Valarray.h:307:31: note:   template argument deduction/substitution failed:
+Valarray.h:332:30: note: template<class T, class U, class> epl::BinOp<epl::addition, T, epl::vexpr<epl::UnaryVal<U> > > epl::operator+(const T&, const U&)
+ BinOp<addition, T, UnVal<U>> operator+(const T& a, const U& b) { return a + UnVal<U>(UnaryVal<U>(b)); }
+                              ^
+Valarray.h:332:30: note:   template argument deduction/substitution failed:
+Valarray.h:334:30: note: template<class T, class U, class> epl::BinOp<epl::addition, epl::vexpr<epl::UnaryVal<U> >, T> epl::operator+(const U&, const T&)
+ BinOp<addition, UnVal<U>, T> operator+(const U& b, const T& a) { return UnVal<U>(UnaryVal<U>(b)) + a; }
+                              ^
+Valarray.h:334:30: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.9/vector:65:0,
+                 from ../../gtest/include/gtest/gtest.h:56,
+                 from Valarray_secret_unittests.cpp:15:
+/usr/include/c++/4.9/bits/stl_bvector.h:387:3: note: std::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+   ^
+/usr/include/c++/4.9/bits/stl_bvector.h:387:3: note:   no known conversion for argument 1 from ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ to ‘std::ptrdiff_t {aka long int}’
+/usr/include/c++/4.9/bits/stl_bvector.h:297:3: note: std::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_iterator& __x)
+   ^
+/usr/include/c++/4.9/bits/stl_bvector.h:297:3: note:   no known conversion for argument 1 from ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ to ‘std::ptrdiff_t {aka long int}’
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:440:5: note: template<class _Tp> std::complex<_Tp> std::operator+(const std::complex<_Tp>&)
+     operator+(const complex<_Tp>& __x)
+     ^
+/usr/include/c++/4.9/complex:440:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘const std::complex<_Tp>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:339:5: note: template<class _Tp> std::complex<_Tp> std::operator+(const _Tp&, const std::complex<_Tp>&)
+     operator+(const _Tp& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.9/complex:339:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   mismatched types ‘const std::complex<_Tp>’ and ‘epl::ValueType<epl::valarray<int> > {aka int}’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:330:5: note: template<class _Tp> std::complex<_Tp> std::operator+(const std::complex<_Tp>&, const _Tp&)
+     operator+(const complex<_Tp>& __x, const _Tp& __y)
+     ^
+/usr/include/c++/4.9/complex:330:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘const std::complex<_Tp>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:321:5: note: template<class _Tp> std::complex<_Tp> std::operator+(const std::complex<_Tp>&, const std::complex<_Tp>&)
+     operator+(const complex<_Tp>& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.9/complex:321:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘const std::complex<_Tp>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2491:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2491:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2485:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2485:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2479:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2479:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   mismatched types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘epl::ValueType<epl::valarray<int> > {aka int}’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2473:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2473:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   mismatched types ‘const _CharT*’ and ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2461:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2461:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2455:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2455:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2449:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2449:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2437:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2437:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2421:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2421:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:53:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.tcc:708:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^
+/usr/include/c++/4.9/bits/basic_string.tcc:708:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   mismatched types ‘const std::basic_string<_CharT, _Traits, _Alloc>’ and ‘epl::ValueType<epl::valarray<int> > {aka int}’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:53:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.tcc:692:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.tcc:692:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   mismatched types ‘const _CharT*’ and ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/basic_string.h:2384:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2384:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/stl_iterator.h:1135:5: note: template<class _Iterator> std::move_iterator<_Iterator> std::operator+(typename std::move_iterator<_Iterator>::difference_type, const std::move_iterator<_Iterator>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:1135:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   mismatched types ‘const std::move_iterator<_Iterator>’ and ‘epl::ValueType<epl::valarray<int> > {aka int}’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/stl_iterator.h:334:5: note: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:334:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:145:87: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘epl::ValueType<epl::valarray<int> > {aka int}’
+  auto operator()(const ValueType<T>& x, const ValueType<U>& y) const -> decltype(A(x) + B(y)) {
+                                                                                       ^
+Valarray.h: In instantiation of ‘struct epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >’:
+Valarray.h:196:47:   required from ‘struct epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > >’
+Valarray_secret_unittests.cpp:422:34:   required from here
+Valarray.h:115:49: error: no match for call to ‘(const epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >) (epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >::value_type, int&)’
+  using value_type = decltype(op(lhs[0], rhs[0]));
+                                                 ^
+Valarray.h:117:7: error: no match for call to ‘(const epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >) (epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >::value_type, int&)’
+  auto operator[](size_t k) const -> decltype(op(lhs[k], rhs[k])) { return op(lhs[k], rhs[k]); }
+       ^
+Valarray.h: In instantiation of ‘struct epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >’:
+Valarray.h:196:47:   required from ‘struct epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >’
+Valarray_secret_unittests.cpp:422:36:   required from here
+Valarray.h:115:44: error: no match for ‘operator[]’ (operand types are ‘epl::Ref<epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > {aka const epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > >}’ and ‘int’)
+  using value_type = decltype(op(lhs[0], rhs[0]));
+                                            ^
+Valarray.h:117:60: error: no match for ‘operator[]’ (operand types are ‘epl::Ref<epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > {aka const epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > >}’ and ‘size_t {aka long unsigned int}’)
+  auto operator[](size_t k) const -> decltype(op(lhs[k], rhs[k])) { return op(lhs[k], rhs[k]); }
+                                                            ^
+Valarray.h: In instantiation of ‘struct epl::BinaryOp<epl::division<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> >’:
+Valarray.h:196:47:   required from ‘struct epl::vexpr<epl::BinaryOp<epl::division<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> > >’
+Valarray_secret_unittests.cpp:422:40:   required from here
+Valarray.h:115:36: error: no match for ‘operator[]’ (operand types are ‘epl::Ref<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > > > {aka const epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >}’ and ‘int’)
+  using value_type = decltype(op(lhs[0], rhs[0]));
+                                    ^
+Valarray.h:117:52: error: no match for ‘operator[]’ (operand types are ‘epl::Ref<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > > > {aka const epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >}’ and ‘size_t {aka long unsigned int}’)
+  auto operator[](size_t k) const -> decltype(op(lhs[k], rhs[k])) { return op(lhs[k], rhs[k]); }
+                                                    ^
+Valarray.h: In instantiation of ‘epl::valarray<T>::valarray(U) [with U = epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >; <template-parameter-2-2> = epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >; T = int]’:
+Valarray_secret_unittests.cpp:425:41:   required from here
+Valarray.h:235:24: error: cannot convert ‘epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >::value_type {aka epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ to ‘int’ in assignment
+    this->operator[](k) = v[k];
+                        ^
+Valarray.h:238:4: error: no matching function for call to ‘epl::valarray<int>::push_back(epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >::value_type)’
+    this->push_back(v[k]);
+    ^
+Valarray.h:238:4: note: candidates are:
+In file included from Valarray.h:21:0,
+                 from Valarray_secret_unittests.cpp:14:
+Vector.h:136:7: note: void epl::vector<T>::push_back(const T&) [with T = int]
+  void push_back(const T& that) {
+       ^
+Vector.h:136:7: note:   no known conversion for argument 1 from ‘epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >::value_type {aka epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ to ‘const int&’
+Vector.h:143:7: note: void epl::vector<T>::push_back(T&&) [with T = int]
+  void push_back(T&& that) {
+       ^
+Vector.h:143:7: note:   no known conversion for argument 1 from ‘epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >::value_type {aka epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ to ‘int&&’
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h: In instantiation of ‘epl::valarray<T>::valarray(U) [with U = epl::vexpr<epl::BinaryOp<epl::division<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> > >; <template-parameter-2-2> = epl::vexpr<epl::BinaryOp<epl::division<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> > >; T = int]’:
+Valarray_secret_unittests.cpp:431:59:   required from here
+Valarray.h:235:27: error: no match for ‘operator[]’ (operand types are ‘epl::vexpr<epl::BinaryOp<epl::division<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> > >’ and ‘int’)
+    this->operator[](k) = v[k];
+                           ^
+Valarray.h:238:21: error: no match for ‘operator[]’ (operand types are ‘epl::vexpr<epl::BinaryOp<epl::division<epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > >, epl::valarray<int>, epl::vexpr<epl::BinaryOp<epl::addition<epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> >, epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >, epl::valarray<int> > > > >, epl::valarray<int> > >’ and ‘int’)
+    this->push_back(v[k]);
+                     ^
+Valarray.h: In instantiation of ‘epl::vexpr<epl::UnaryFunction<Func, VExpr, epl::vexpr<T> > > epl::vexpr<T>::apply(Func<VExpr>) [with Func = epl::unary_sqrt; VExpr = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >]’:
+Valarray.h:218:100:   required from ‘decltype (((epl::vexpr<T>*)this)->.apply(epl::unary_sqrt<VExpr>())) epl::vexpr<T>::sqrt() [with VExpr = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; decltype (((epl::vexpr<T>*)this)->.apply(epl::unary_sqrt<VExpr>())) = epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > >]’
+Valarray_secret_unittests.cpp:422:28:   required from here
+Valarray.h:216:31: error: no matching function for call to ‘epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >::UnaryFunction(epl::unary_sqrt<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >&, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >*)’
+   return vexpr<Op>(Op(f, this));
+                               ^
+Valarray.h:216:31: note: candidates are:
+Valarray.h:127:2: note: epl::UnaryFunction<Op, T, Lhs>::UnaryFunction(const Op<T>&, const Lhs&) [with Op = epl::unary_sqrt; T = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; Lhs = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >]
+  UnaryFunction(const Op<T>& op, const Lhs& lhs) : op(op), lhs(const_cast<Lhs&>(lhs)) {}
+  ^
+Valarray.h:127:2: note:   no known conversion for argument 2 from ‘epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >*’ to ‘const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >&’
+Valarray.h:123:8: note: constexpr epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >::UnaryFunction(const epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >&)
+ struct UnaryFunction {
+        ^
+Valarray.h:123:8: note:   candidate expects 1 argument, 2 provided
+Valarray.h:123:8: note: constexpr epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >::UnaryFunction(epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >&&)
+Valarray.h:123:8: note:   candidate expects 1 argument, 2 provided
+Valarray.h: In instantiation of ‘epl::ValueType<T> epl::unary_negate<T>::operator()(epl::ValueType<T>&) const [with T = epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > >; epl::ValueType<T> = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >]’:
+Valarray.h:105:66:   required from ‘epl::CondComp<Lhs, Lhs> epl::UnaryOp<Op, Lhs>::operator[](size_t) const [with Op = epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >; Lhs = epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > >; epl::CondComp<Lhs, Lhs> = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; size_t = long unsigned int]’
+Valarray.h:200:50:   required from ‘epl::vexpr<T>::value_type epl::vexpr<T>::operator[](size_t) const [with VExpr = epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >; epl::vexpr<T>::value_type = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; size_t = long unsigned int]’
+Valarray.h:235:27:   required from ‘epl::valarray<T>::valarray(U) [with U = epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >; <template-parameter-2-2> = epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >; T = int]’
+Valarray_secret_unittests.cpp:425:41:   required from here
+Valarray.h:135:64: error: no match for ‘operator-’ (operand type is ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’)
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+Valarray.h:135:64: note: candidates are:
+Valarray.h:300:27: note: template<class Expr1> epl::UnOp<epl::unary_negate, Expr1> epl::operator-(const Expr1&)
+ UnOp<unary_negate, Expr1> operator-(const Expr1& x) {
+                           ^
+Valarray.h:300:27: note:   template argument deduction/substitution failed:
+Valarray.h:313:34: note: template<class Expr1, class Expr2> epl::BinOp<epl::subtraction, Expr1, Expr2> epl::operator-(const Expr1&, const Expr2&)
+ BinOp<subtraction, Expr1, Expr2> operator-(const Expr1& x, const Expr2& y) {
+                                  ^
+Valarray.h:313:34: note:   template argument deduction/substitution failed:
+Valarray.h:135:64: note:   candidate expects 2 arguments, 1 provided
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+Valarray.h:337:33: note: template<class T, class U, class> epl::BinOp<epl::subtraction, T, epl::vexpr<epl::UnaryVal<U> > > epl::operator-(const T&, const U&)
+ BinOp<subtraction, T, UnVal<U>> operator-(const T& a, const U& b) { return a - UnVal<U>(UnaryVal<U>(b)); }
+                                 ^
+Valarray.h:337:33: note:   template argument deduction/substitution failed:
+Valarray.h:135:64: note:   candidate expects 2 arguments, 1 provided
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+Valarray.h:339:33: note: template<class T, class U, class> epl::BinOp<epl::subtraction, epl::vexpr<epl::UnaryVal<U> >, T> epl::operator-(const U&, const T&)
+ BinOp<subtraction, UnVal<U>, T> operator-(const U& b, const T& a) { return UnVal<U>(UnaryVal<U>(b)) - a; }
+                                 ^
+Valarray.h:339:33: note:   template argument deduction/substitution failed:
+Valarray.h:135:64: note:   candidate expects 2 arguments, 1 provided
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from /usr/include/c++/4.9/vector:65:0,
+                 from ../../gtest/include/gtest/gtest.h:56,
+                 from Valarray_secret_unittests.cpp:15:
+/usr/include/c++/4.9/bits/stl_bvector.h:208:3: note: std::ptrdiff_t std::operator-(const std::_Bit_iterator_base&, const std::_Bit_iterator_base&)
+   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
+   ^
+/usr/include/c++/4.9/bits/stl_bvector.h:208:3: note:   candidate expects 2 arguments, 1 provided
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:446:5: note: template<class _Tp> std::complex<_Tp> std::operator-(const std::complex<_Tp>&)
+     operator-(const complex<_Tp>& __x)
+     ^
+/usr/include/c++/4.9/complex:446:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ is not derived from ‘const std::complex<_Tp>’
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:369:5: note: template<class _Tp> std::complex<_Tp> std::operator-(const _Tp&, const std::complex<_Tp>&)
+     operator-(const _Tp& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.9/complex:369:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   candidate expects 2 arguments, 1 provided
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:360:5: note: template<class _Tp> std::complex<_Tp> std::operator-(const std::complex<_Tp>&, const _Tp&)
+     operator-(const complex<_Tp>& __x, const _Tp& __y)
+     ^
+/usr/include/c++/4.9/complex:360:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ is not derived from ‘const std::complex<_Tp>’
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from Valarray_secret_unittests.cpp:7:0:
+/usr/include/c++/4.9/complex:351:5: note: template<class _Tp> std::complex<_Tp> std::operator-(const std::complex<_Tp>&, const std::complex<_Tp>&)
+     operator-(const complex<_Tp>& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.9/complex:351:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ is not derived from ‘const std::complex<_Tp>’
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/stl_iterator.h:1128:5: note: template<class _Iterator> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_Iterator>&, const std::move_iterator<_Iterator>&)
+     operator-(const move_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:1128:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ is not derived from ‘const std::move_iterator<_Iterator>’
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/stl_iterator.h:1121:5: note: template<class _IteratorL, class _IteratorR> decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_Iterator>&, const std::move_iterator<_IteratorR>&)
+     operator-(const move_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:1121:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ is not derived from ‘const std::move_iterator<_Iterator>’
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/stl_iterator.h:380:5: note: template<class _IteratorL, class _IteratorR> decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator-(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:380:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/istream:38,
+                 from /usr/include/c++/4.9/sstream:38,
+                 from /usr/include/c++/4.9/complex:45,
+                 from Valarray_secret_unittests.cpp:7:
+/usr/include/c++/4.9/bits/stl_iterator.h:328:5: note: template<class _Iterator> typename std::reverse_iterator<_Iterator>::difference_type std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator-(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:328:5: note:   template argument deduction/substitution failed:
+In file included from Valarray_secret_unittests.cpp:14:0:
+Valarray.h:135:64: note:   ‘epl::ValueType<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > {aka const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  ValueType<T> operator()(const ValueType<T>& x) const { return -x; }
+                                                                ^
+Valarray.h: In instantiation of ‘epl::UnaryFunction<Op, T, Lhs>::value_type epl::UnaryFunction<Op, T, Lhs>::operator[](size_t) const [with Op = epl::unary_sqrt; T = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; Lhs = epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >; epl::UnaryFunction<Op, T, Lhs>::value_type = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; size_t = long unsigned int]’:
+Valarray.h:200:50:   required from ‘epl::vexpr<T>::value_type epl::vexpr<T>::operator[](size_t) const [with VExpr = epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > >; epl::vexpr<T>::value_type = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; size_t = long unsigned int]’
+Valarray.h:105:63:   required from ‘epl::CondComp<Lhs, Lhs> epl::UnaryOp<Op, Lhs>::operator[](size_t) const [with Op = epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >; Lhs = epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > >; epl::CondComp<Lhs, Lhs> = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; size_t = long unsigned int]’
+Valarray.h:200:50:   required from ‘epl::vexpr<T>::value_type epl::vexpr<T>::operator[](size_t) const [with VExpr = epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >; epl::vexpr<T>::value_type = epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; size_t = long unsigned int]’
+Valarray.h:235:27:   required from ‘epl::valarray<T>::valarray(U) [with U = epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >; <template-parameter-2-2> = epl::vexpr<epl::UnaryOp<epl::unary_negate<epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > >, epl::vexpr<epl::UnaryFunction<epl::unary_sqrt, epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > > > > > >; T = int]’
+Valarray_secret_unittests.cpp:425:41:   required from here
+Valarray.h:128:74: error: no matching function for call to ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >::BinaryOp(epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >::value_type)’
+  value_type operator[](size_t k) const { return op(static_cast<T>(lhs[k])); }
+                                                                          ^
+Valarray.h:128:74: note: candidates are:
+Valarray.h:116:2: note: epl::BinaryOp<Op, Lhs, Rhs>::BinaryOp(const Op&, const Lhs&, const Rhs&) [with Op = epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >; Lhs = epl::valarray<int>; Rhs = epl::vexpr<epl::UnaryVal<int> >]
+  BinaryOp(const Op& op, const Lhs& lhs, const Rhs& rhs) : op(op), lhs(const_cast<Lhs&>(lhs)), rhs(const_cast<Rhs&>(rhs)) {}
+  ^
+Valarray.h:116:2: note:   candidate expects 3 arguments, 1 provided
+Valarray.h:111:8: note: constexpr epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >::BinaryOp(const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >&)
+ struct BinaryOp {
+        ^
+Valarray.h:111:8: note:   no known conversion for argument 1 from ‘epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >::value_type {aka int}’ to ‘const epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >&’
+Valarray.h:111:8: note: constexpr epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >::BinaryOp(epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >&&)
+Valarray.h:111:8: note:   no known conversion for argument 1 from ‘epl::vexpr<epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > > >::value_type {aka int}’ to ‘epl::BinaryOp<epl::multiplication<epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >, epl::valarray<int>, epl::vexpr<epl::UnaryVal<int> > >&&’
+Makefile:27: recipe for target 'PHASE_BS2_0.tst' failed
+make: *** [PHASE_BS2_0.tst] Error 1
+
+Testing: PHASE_A0_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseA
+[ RUN      ] PhaseA.Operators
+[       OK ] PhaseA.Operators (0 ms)
+[----------] 1 test from PhaseA (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_A0_1.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseA
+[ RUN      ] PhaseA.BracketOp
+[       OK ] PhaseA.BracketOp (0 ms)
+[----------] 1 test from PhaseA (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_A1_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseA1
+[ RUN      ] PhaseA1.Complex
+[       OK ] PhaseA1.Complex (0 ms)
+[----------] 1 test from PhaseA1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS0_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS0_1.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[0,0,0,0,0,0,0,0,0,0]
+[1,1,1,1,1,1,1,1,1,1]
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS0_2.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS0_3.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS0_4.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS0_5.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_AS1_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseASecret.<censored>
+[ RUN      ] PhaseASecret.<censored>
+[       OK ] PhaseASecret.<censored>
+[----------] 1 test from PhaseASecret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_B1_0.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1
+[ RUN      ] PhaseB1.Sqrt
+[       OK ] PhaseB1.Sqrt (0 ms)
+[----------] 1 test from PhaseB1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_B1_1.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1
+[ RUN      ] PhaseB1.Apply
+[       OK ] PhaseB1.Apply (0 ms)
+[----------] 1 test from PhaseB1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_B1_2.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1
+[ RUN      ] PhaseB1.Accumulate
+[       OK ] PhaseB1.Accumulate (0 ms)
+[----------] 1 test from PhaseB1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_B1_3.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1
+[ RUN      ] PhaseB1.Lazy
+[       OK ] PhaseB1.Lazy (0 ms)
+[----------] 1 test from PhaseB1 (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_BS1_1.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_BS1_2.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_BS1_3.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_BS1_4.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+epl::vector copy constructor
+unknown file: Failure
+C++ exception with description "subscript out of range" thrown in the test body.
+[  FAILED  ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (30 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] PhaseB1Secret.<censored>
+
+ 1 FAILED TEST
+
+Testing: PHASE_BS1_6.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_BS1_7.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_BS1_8.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+
+Testing: PHASE_BS1_9.tst
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PhaseB1Secret.<censored>
+[ RUN      ] PhaseB1Secret.<censored>
+[       OK ] PhaseB1Secret.<censored>
+[----------] 1 test from PhaseB1Secret.<censored>
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
