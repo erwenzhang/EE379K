@@ -201,8 +201,43 @@ struct vexpr {
 	size_t len() const { return v.len(); }
 	size_t size() const { return this->len(); }
 
-	template <template <class> class Func>
-	auto accumulate(Func<VExpr> f) -> typename decltype(f)::result_type {
+	class iterator {
+	public:
+		using value_type = typename VExpr::value_type;
+		using iterator_category = std::random_access_iterator_tag;
+		using difference_type = ptrdiff_t;
+		using reference = value_type;
+		using pointer = value_type*;
+		Ref<VExpr> v;
+		uint64_t k;
+
+		iterator(VExpr b, uint64_t n) : v(b), k(n) {}
+		iterator(const iterator& it) : v(it.v), k(it.k) {}
+		iterator& operator=(const iterator& it) { v = it.v; k = it.k; return *this; }
+		bool operator==(const iterator& it) const { return k == it.k; }
+		bool operator!=(const iterator& it) const { return ! this->operator==(it); }
+		bool operator<(const iterator& it)  const { return k < it.k; }
+		bool operator>(const iterator& it)  const { return k > it.k; }
+		bool operator<=(const iterator& it) const { return k <= it.k; }
+		bool operator>=(const iterator& it) const { return k >= it.k; }
+		iterator& operator++() { k++; return *this; }
+		iterator& operator--() { k--; return *this; }
+		iterator operator++(int) { iterator t{*this}; this->operator++(); return t; }
+		iterator operator--(int) { iterator t{*this}; this->operator--(); return t; }
+		iterator& operator+=(uint64_t d) { k += d; return *this; }
+		iterator& operator-=(uint64_t d) { k -= d; return *this; }
+		iterator operator+(uint64_t d) const { iterator t{*this}; t.k += d; return t; }
+		iterator operator-(uint64_t d) const { iterator t{*this}; t.k -= d; return t; }
+		int64_t operator-(iterator it) const { return k - it.k; }
+		value_type operator*() const { return v.operator[](k); }
+		value_type operator[](size_t n) const { return v.operator[](k + n); }
+	};
+
+	iterator begin() { return iterator(v, 0); }
+	iterator end() { return iterator(v, this->len()); }
+
+	template <template <class> class Func, typename T>
+	auto accumulate(Func<T> f) -> typename decltype(f)::result_type {
 		typename decltype(f)::result_type acc(this->operator[](0));
 		for (int k = 1; k < this->len(); k++) {
 			acc = f(acc, this->operator[](k));
@@ -210,13 +245,13 @@ struct vexpr {
 		return acc;
 	}
 
-	template <template <class> class Func>
-	auto apply(Func<VExpr> f) -> vexpr<UnaryFunction<Func, VExpr, vexpr<VExpr>>> {
-		using Op = UnaryFunction<Func, VExpr, VExpr>;
-		return vexpr<Op>(Op(f, this));
+	template <template <class> class Func, typename U>
+	vexpr<UnaryFunction<Func, U, vexpr<VExpr>>> apply(Func<U> f) {
+		using Op = UnaryFunction<Func, U, vexpr<VExpr>>;
+		return vexpr<Op>(Op(f, *this));
 	}
-	auto sqrt() -> decltype(this->apply(unary_sqrt<VExpr>())) { return this->apply(unary_sqrt<VExpr>()); }
-	auto sum() -> decltype(this->accumulate(std::plus<VExpr>())) { return this->accumulate(std::plus<VExpr>()); }
+	auto sqrt() -> decltype(this->apply(unary_sqrt<value_type>())) { return this->apply(unary_sqrt<value_type>()); }
+	auto sum() -> decltype(this->accumulate(std::plus<value_type>())) { return this->accumulate(std::plus<value_type>()); }
 };
 
 /* Basic declaration of valarray (inherits everything from vector) */
