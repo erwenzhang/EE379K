@@ -227,7 +227,7 @@ struct vexpr {
 	public:
 		using value_type = typename VExpr::value_type;
 		using iterator_category = std::random_access_iterator_tag;
-		using difference_type = ptrdiff_t;
+		using difference_type = std::ptrdiff_t;
 		using reference = value_type;
 		using pointer = value_type*;
 		Ref<VExpr> v;
