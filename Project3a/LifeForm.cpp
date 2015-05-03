@@ -32,13 +32,15 @@ ObjInfo LifeForm::info_about_them(SmartPointer<LifeForm> neighbor) {
 
 
 void LifeForm::compute_next_move(void) {
+	border_cross_event->cancel();
 	if (!is_alive || speed < min_delta_time) {
 		return;
 	}
 
+	double delta = (space.distance_to_edge(pos, course) / speed) + min_delta_time;
+
 	SmartPointer<LifeForm> self = SmartPointer<LifeForm>(this);
-	border_cross_event = new Event(space.distance_to_edge(pos, course) / speed,
-		[self](void) { self->border_cross(); });
+	border_cross_event = new Event(delta, [self](void) { self->border_cross(); });
 }
 
 /*
@@ -64,16 +66,19 @@ void LifeForm::update_position(void) {
 	double delta = now - update_time;
 	if (delta < min_delta_time) return;
 
-	double xdelta = (delta + min_delta_time) * speed * cos(course);
-	double ydelta = (delta + min_delta_time) * speed * sin(course);
-	Point pos_new(pos.xpos + xdelta, pos.ypos + ydelta);
+	double xdelta = delta * speed * cos(course);
+	double ydelta = delta * speed * sin(course);
+	Point pos_new = Point(pos.xpos + xdelta, pos.ypos + ydelta);
+	Point pos_old = pos;
 
 	energy -= movement_cost(speed, delta);
 	if (space.is_out_of_bounds(pos_new) || (energy < min_energy)) {
 		die();
 	} else {
-		space.update_position(pos, pos_new);
-		pos = pos_new;
+		if (pos_old != pos_new) {
+			pos = pos_new;
+			space.update_position(pos_old, pos);
+		}
 	}
 
 	update_time = now;
@@ -218,6 +223,10 @@ void LifeForm::reproduce(SmartPointer<LifeForm> child) {
 		child->pos.ypos = pos.ypos + radius * sin(angle);
 
 		if (space.is_out_of_bounds(child->pos)) {
+			continue;
+		}
+
+		if (space.is_occupied(child->pos)) {
 			continue;
 		}
 
