@@ -336,7 +336,7 @@ void LifeForm::resolve_encounter(SmartPointer<LifeForm> that) {
 					}
 					break;
 				case SLOWER_GUY_WINS:
-					if (energy > that->energy) {
+					if (speed < that->speed) {
 						that_wins = false;
 					} else {
 						this_wins = false;
@@ -350,7 +350,7 @@ void LifeForm::resolve_encounter(SmartPointer<LifeForm> that) {
 					}
 					break;
 				case UNDERDOG_IS_HERE:
-					if (energy > that->energy) {
+					if (energy < that->energy) {
 						that_wins = false;
 					} else {
 						this_wins = false;
