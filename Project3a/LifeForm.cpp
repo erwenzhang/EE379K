@@ -263,6 +263,8 @@ void LifeForm::reproduce(SmartPointer<LifeForm> child) {
  * radius.
  */
 ObjList LifeForm::perceive(double radius) {
+	if (!is_alive) return ObjList{};
+
 	/* bounds checking */
 	if (radius < min_perceive_range) {
 		radius = min_perceive_range;
