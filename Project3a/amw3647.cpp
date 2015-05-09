@@ -7,7 +7,7 @@
 #include "Event.h"
 #include "ObjInfo.h"
 #include "Random.h"
-#include "Weems.h"
+#include "amw3647.h"
 #include "Window.h"
 
 using namespace std;
@@ -20,13 +20,13 @@ void bound(T& x, const T& min, const T& max) {
 	if (x < min) { x = min; }
 }
 
-Initializer<Weems> __Weems_initializer;
+Initializer<amw3647> __amw3647_initializer;
 
-String Weems::species_name(void) const {
-	return "Weems";
+String amw3647::species_name(void) const {
+	return "amw3647";
 }
 
-bool Weems::victory(const ObjInfo& info) {
+bool amw3647::victory(const ObjInfo& info) {
 	switch (encounter_strategy) {
 		case EVEN_MONEY:       return false;
 		case FASTER_GUY_WINS:  return true; // (get_speed() > info.their_speed);
@@ -37,7 +37,7 @@ bool Weems::victory(const ObjInfo& info) {
 	}
 }
 
-Action Weems::encounter(const ObjInfo& info) {
+Action amw3647::encounter(const ObjInfo& info) {
 	update_pos();
 
 	if (info.species == species_name()) {
@@ -46,44 +46,44 @@ Action Weems::encounter(const ObjInfo& info) {
 		return LIFEFORM_IGNORE;
 	} else {
 		hunt_event->cancel();
-		SmartPointer<Weems> self{this};
+		SmartPointer<amw3647> self{this};
 		hunt_event = new Event(0.0, [self] (void) { self->hunt(); });
 		return LIFEFORM_EAT;
 	}
 }
 
-void Weems::initialize(void) {
-	LifeForm::add_creator(Weems::create, "Weems");
+void amw3647::initialize(void) {
+	LifeForm::add_creator(amw3647::create, "amw3647");
 }
 
-Weems::Weems() {
+amw3647::amw3647() {
 		hunt_event = Nil<Event>();
-		SmartPointer<Weems> self{this};
+		SmartPointer<amw3647> self{this};
 		(void) new Event(0.0, [self] (void) { self->live();});
 }
 
 
-Weems::~Weems() {}
+amw3647::~amw3647() {}
 
-void Weems::spawn(void) {
-	Weems* child = new Weems;
+void amw3647::spawn(void) {
+	amw3647* child = new amw3647;
 	reproduce(child);
 }
 
 
-Color Weems::my_color(void) const {
+Color amw3647::my_color(void) const {
   	return MAGENTA;
 }  
 
-LifeForm* Weems::create(void)
+LifeForm* amw3647::create(void)
 {
-	Weems* res = Nil<Weems>();
-	res = new Weems;
+	amw3647* res = Nil<amw3647>();
+	res = new amw3647;
 	res->display();
 	return res;
 }
 
-void Weems::live(void) {
+void amw3647::live(void) {
 	p = Point(0, 0);
 	last_update = Event::now();
 	density = 1.0;
@@ -91,11 +91,11 @@ void Weems::live(void) {
 	set_course(drand48() * 2.0 * M_PI);
 	set_speed(2 + 5.0 * drand48());
 
-	SmartPointer<Weems> self{this};
+	SmartPointer<amw3647> self{this};
 	hunt_event = new Event(5.0, [self] (void) { self->hunt();});
 }
 
-void Weems::update_pos(void) {
+void amw3647::update_pos(void) {
 	double now = Event::now();
 	double delta = now - last_update;
 	if (delta < min_delta_time) return;
@@ -107,7 +107,7 @@ void Weems::update_pos(void) {
 	last_update = now;
 }
 
-void Weems::hunt(void) {
+void amw3647::hunt(void) {
 	const String fav_food = "Algae";
 
     hunt_event = Nil<Event>();
@@ -175,7 +175,7 @@ void Weems::hunt(void) {
 	    }
     }
 
-    SmartPointer<Weems> self{this};
+    SmartPointer<amw3647> self{this};
     hunt_event = new Event(10.0, [self] (void) { self->hunt();});
 
     if (health() >= 3.0) spawn();

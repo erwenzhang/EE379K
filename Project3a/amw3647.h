@@ -1,10 +1,10 @@
-#ifndef _Weems_h
-#define _Weems_h
+#ifndef _amw3647_h
+#define _amw3647_h
 
 #include "LifeForm.h"
 #include "Init.h"
 
-class Weems : public LifeForm {
+class amw3647 : public LifeForm {
 protected:
   int course_changed;
   double density;
@@ -18,13 +18,13 @@ protected:
   void update_pos(void);
   Event* hunt_event;
 public:
-  Weems(void);
-  ~Weems(void);
+  amw3647(void);
+  ~amw3647(void);
   Color my_color(void) const;
   static LifeForm* create(void);
   std::string species_name(void) const;
   Action encounter(const ObjInfo&);
-  friend class Initializer<Weems>;
+  friend class Initializer<amw3647>;
 };
 
-#endif /* !(_Weems_h) */
+#endif /* !(_amw3647_h) */
