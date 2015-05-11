@@ -1,7 +1,7 @@
 
 # Inheritance
 
-```
+```cpp
 Base    b;
 Base    *pb = &b;
 Derived d;

@@ -5,7 +5,7 @@ are *sure* that data can be reused instead of copied.
 
 Most often used when you have a temporary object, an object with no name.
 
-```
+```cpp
 String s{"hello"};
 String s{"world"};
 String r = concat(s, t);
@@ -23,7 +23,7 @@ shallow-copy.
 The solution: a new type to allow designers to overload the assignment operator
 in two ways (copy and move).
 
-```
+```cpp
 operator=(const T&&);
 operator=(T&&);
 ```
@@ -31,7 +31,7 @@ operator=(T&&);
 Because the rvalue reference is a type, you can cast an object to force move
 semantics.
 
-```
+```cpp
 r = (String&&)s;
 ```
 
@@ -39,7 +39,7 @@ When moving an object, the destructor of the rvalue reference is still called.
 Therefore, when moving, you must ensure the destructor on the rvalue is
 impotent.
 
-```
+```cpp
 void move(String&& that) {
     len = that.len;
     data = that.data;
@@ -60,7 +60,7 @@ Play at home: create a `vector<vector<String>>` and observe allocations.
 Say you have a linkedlist that you want to append to another linkedlist.
 Additionally, this suffix list is an rvalue. We can optimize!
 
-```
+```cpp
 void appendList(LinkedList<T>& suffix) {
     for (const auto& x : suffix) {
         push_back(x);

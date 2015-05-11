@@ -24,7 +24,7 @@ Craig    Algae
 During simulation, we will treat all objects the same, as `LifeForm`s. Therefore,
 all objects will be subclasses of `LifeForm`.
 
-```
+```cpp
 class LifeForm {
     virtual void species_name(void) const = 0;
 private:
@@ -48,7 +48,7 @@ class constructor. The language must decide between calling the `Base` class
 Invoking a function from the `constructor` or `destructor` of the `Base` class
 will use the virtual function defined within the `Base` class.
 
-```
+```cpp
 class Base {
     virtual void doit(void) {
         // pass
@@ -110,7 +110,7 @@ be arbitrarily far apart in time, allowing us to be more efficient in our
 simulation.
 
 Our event-driven model looks like the following:
-```
+```cpp
 int main() {
     init_world() // create all lifeforms
 
@@ -188,7 +188,7 @@ twiddle your thumbs).
 
 The SmartPointer implmentation in Project3 is very similar to `std::shared_ptr`.
 
-```
+```cpp
 // bad
 T* p = new T{..., ...};
 ...

@@ -43,7 +43,7 @@ The data struct will provide two functions:
  * all functions specified by the iterator type
 
 Pre- and post-increment operators are sort of funky.
-```
+```cpp
 // pre-increment
 iterator& operator++(void) {
     position = position->next;
@@ -64,7 +64,7 @@ iterator operator++(int) {
 Note: `std::distance` provides a means of calculating the number of elements between two iterators.
 
 The following code does not work!
-```
+```cpp
 template <typename I>
 uint64_t distance(I b, I e) {
     if (I::iterator_category >= RANDOM_ACCESS) {
@@ -85,7 +85,7 @@ overloading to distinguish between an iterator of type `RANDOM_ACCESS` and an
 iterator of type `FORWARD_ITERATOR`. In order to make the above code work, we
 define two functions as follows:
 
-```
+```cpp
 template <typename I>
 uint64_t distance(I b, I e, std::forward_iterator_tag t) {
     uint64_t len;
@@ -118,7 +118,7 @@ C++ called _template specialization_.
 
 ### `iterator_traits`
 
-```
+```cpp
 /* by itself, this is useless... we're going to specialize though */
 /* this is an example of how the std library is implemented */
 template <typename T>
@@ -152,7 +152,7 @@ default assumption is that `::iterator_category` is a static variable. So the
 first time the compiler checks our function, it sees a syntax error.
 
 As a result... `typename`!
-```
+```cpp
 template <typename I>
 uint64_t distance(I b, I e) {
     /* let the compiler know what's happening */
@@ -161,7 +161,7 @@ uint64_t distance(I b, I e) {
 }
 ```
 And another!
-```
+```cpp
 template <typename T>
 struct iterator_traits {
     using value_type = T::value_type;
@@ -173,7 +173,7 @@ struct iterator_traits {
 
 If we have a function that operates on iterators, we may want to dereference our
 iterator at some point.
-```
+```cpp
 template <typename I>
 I partition(I b, I e) {
     auto piv = *b;
@@ -182,7 +182,7 @@ I partition(I b, I e) {
 ```
 Using the typename `auto` is the easiest way to do this, but it's still useful
 to understand the alternative (if you're using something older than C++11).
-```
+```cpp
 template <typename I>
 I partition(I b, I e) {
     using T = typename std::iterator_traits<I>::value_type;

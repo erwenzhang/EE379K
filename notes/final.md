@@ -16,7 +16,7 @@
 
 + Multiple inheritance, two base classes
 
-```
+```cpp
     // pointer to member function of LifeForm with no parameters and no return
     void LifeForm::* p)(void) = &LifeForm::border_cross;
     void LifeForm::* q)(void) = &LifeForm::species_name; // virtual func
@@ -38,7 +38,7 @@
 
 + Array of objects
 
-```
+```cpp
     LifeForm *p = new Craig[10]; // very very bad
     delete[] p; // unable to delete
 ```
@@ -49,7 +49,7 @@
 
 + Reboot question from exam one, change type of object at runtime
 
-```
+```cpp
     LifeForm *p = new Craig;
     (*p) <= Algae // we want to change type
                   // we have no idea how many pointers are to p

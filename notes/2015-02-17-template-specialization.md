@@ -3,7 +3,7 @@
 Allows us to create a default implementation for a template, but _also_ specify
 alternative implementations given specific types.
 
-```
+```cpp
 template <typename T>
 class vector {
     T* data;
@@ -30,7 +30,7 @@ searches for any matching templates. The generic `typename T` template is the
 broadest category, and will be matched last.
 
 One of the early arguments for this feature is the following:
-```
+```cpp
 template <>
 class vector<void*> {
     /* etc. */
@@ -55,7 +55,7 @@ avoid this excess by creating a template specialization for `void*` and
 ### Partial Specialization.
 
 This itself grows tedious though. We can do _one more thing_.
-```
+```cpp
 template <typename T>
 class vector<T*> : public vector<void*> {
 public:
@@ -68,7 +68,7 @@ public:
 ### Summary
 
 Generally, we want to solve the following problem.
-```
+```cpp
 template <typename t>
 void doit(T p) {
     if (T is powerful)
@@ -80,7 +80,7 @@ void doit(T p) {
 __The above solution does not work.__
 
 Instead, we use function overloading (for the compiler's benefit).
-```
+```cpp
 template <typename T>
 void doit(T p) {
     T::dependent_type x{};
